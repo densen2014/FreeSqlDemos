@@ -1,0 +1,25 @@
+﻿@page "/" 
+@using BootstrapBlazorApp1_freesql.Models 
+
+    <Table TItem="Item"
+           Items="@dataService.items"
+           IsStriped="true"
+           IsBordered="true"
+           RenderModel="TableRenderModel.Auto"
+           ClickToSelect="true"
+           ShowDefaultButtons="true"
+           ShowDeleteButton="true"
+           DoubleClickToEdit="true"
+           OnResetSearchAsync="@OnResetSearchAsync"
+           OnQueryAsync="@OnEditQueryAsync"
+           OnAddAsync="@OnAddAsync"
+           OnSaveAsync="@OnSaveAsync"
+           OnDeleteAsync="@OnDeleteAsync"
+           ShowToolbar="true"
+           IsPagination="true"
+           PageItemsSource="@PageItemsSource"
+           ShowSearch="true"
+           ShowExtendButtons="true"
+           SearchModel="@SearchModel"
+           AutoGenerateColumns="true">
+    </Table>

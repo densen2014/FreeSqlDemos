@@ -1,0 +1,24 @@
+﻿@inherits LayoutComponentBase
+
+<Layout SideWidth="0" IsPage="true" IsFullSide="true" IsFixedHeader="true" IsFixedFooter="true"
+        ShowFooter="true" ShowGotoTop="true" ShowCollapseBar="true" Menus="@Menus">
+     <Side>
+        <div class="layout-banner">
+            <div class="layout-title">
+                <span>demo</span>
+            </div>
+        </div> 
+    </Side>
+    <Main>
+        <CascadingValue Value="this" IsFixed="true">
+            @Body
+        </CascadingValue>
+    </Main>
+    
+</Layout>
+
+<Toast />
+<Dialog />
+<PopoverConfirm />
+<Message />
+<SweetAlert />

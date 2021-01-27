@@ -1,0 +1,157 @@
+<Window x:Class="AME.View.ConfigPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:POS20"
+        xmlns:app="clr-namespace:AME.Common"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:converters="clr-namespace:MaterialDesignThemes.Wpf.Converters;assembly=MaterialDesignThemes.Wpf"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{Binding appSetting.MyFontFamily}"
+        mc:Ignorable="d"
+        Title="{Binding Title}"
+        Height="570.206"
+        Width="619"
+        WindowStartupLocation="CenterScreen"
+        Topmost="True"
+        Icon="/densen.ico">
+    <ScrollViewer Margin="10">
+        <StackPanel>
+            <FrameworkElement x:Name="dummyElement2"
+                              Visibility="Collapsed" />
+  
+            <GroupBox Header="颜色主题"
+                      Style="{DynamicResource MaterialDesignCardGroupBox}"
+                      Margin="16">
+                <GroupBox.HeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="InvertColors"
+                                                     Height="32"
+                                                     Width="32"
+                                                     VerticalAlignment="Center" />
+                            <TextBlock Margin="8,0,0,0"
+                                       VerticalAlignment="Center"
+                                       Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+                                       Text="{Binding}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </GroupBox.HeaderTemplate>
+                <StackPanel>
+
+                    <StackPanel Orientation="Horizontal"
+                                Margin="8"
+                                x:Name="panel1">
+                        <TextBlock VerticalAlignment="Center">Light</TextBlock>
+                        <ToggleButton Margin="8 0 16 0"
+                                      IsChecked="{Binding appSetting.appSetting.IsDark}"
+                                      Command="{Binding ToggleBaseCommand}"
+                                      CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" />
+                        <TextBlock VerticalAlignment="Center">Dark</TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="字体"
+                      Style="{DynamicResource MaterialDesignCardGroupBox}"
+                      Margin="16">
+                <GroupBox.HeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="FormatFont"
+                                                     Height="32"
+                                                     Width="32"
+                                                     VerticalAlignment="Center" />
+                            <TextBlock Margin="8,0,0,0"
+                                       VerticalAlignment="Center"
+                                       Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+                                       Text="{Binding}" />
+                            <TextBlock Margin="8,0,0,0"
+                                       VerticalAlignment="Center"
+                                       Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+                                       Text="{Binding appSetting.Myfontsize}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </GroupBox.HeaderTemplate>
+                <StackPanel>
+
+                    <StackPanel Orientation="Vertical"
+                                Margin="8">
+                        <TextBlock VerticalAlignment="Center"
+                                   Margin="8"
+                                   FontSize="{Binding appSetting.Myfontsize}">大小</TextBlock>
+                        <Slider TickFrequency="5"
+                                Orientation="Horizontal"
+                                TickPlacement="BottomRight"
+                                Minimum="4"
+                                Maximum="60"
+                                Value="{Binding appSetting.Myfontsize,Mode=TwoWay}"
+                                IsSelectionRangeEnabled="True" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"
+                                Margin="8">
+                        <Label Content="字体:"
+                               VerticalAlignment="Center"
+                               Width="100" />
+                        <ComboBox Text="{Binding appSetting.MyFontFamily}">
+                            <ComboBoxItem Content="幼圆" />
+                            <ComboBoxItem Content="宋体" />
+                            <ComboBoxItem Content="黑体" />
+                            <ComboBoxItem Content="新宋体" />
+                            <ComboBoxItem Content="华文隶书" />
+                            <ComboBoxItem Content="华文彩云" />
+                            <ComboBoxItem Content="华文琥珀" />
+                            <ComboBoxItem Content="微软雅黑" />
+                            <ComboBoxItem Content="楷体" />
+                            <ComboBoxItem Content="Arial" />
+                            <ComboBoxItem Content="Fira Code" />
+                            <ComboBoxItem Content="Fira Code Light" />
+                        </ComboBox>
+                    </StackPanel>
+
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="窗体"
+                      Style="{DynamicResource MaterialDesignCardGroupBox}"
+                      Margin="16">
+                <GroupBox.HeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="WindowRestore"
+                                                     Height="32"
+                                                     Width="32"
+                                                     VerticalAlignment="Center" />
+                            <TextBlock Margin="8,0,0,0"
+                                       VerticalAlignment="Center"
+                                       Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+                                       Text="{Binding}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </GroupBox.HeaderTemplate>
+                <StackPanel>
+
+                    <StackPanel Orientation="Horizontal"
+                                Margin="8">
+                        <Label Content="主窗体:"
+                               VerticalAlignment="Center"
+                               Width="100" />
+                        <ComboBox Text="{Binding appSetting.MainWindowMax}">
+                            <ComboBoxItem Content="Normal" />
+                            <ComboBoxItem Content="Maximized" />
+                            <ComboBoxItem Content="Minimized" />
+                        </ComboBox>
+                    </StackPanel>
+ 
+                </StackPanel>
+            </GroupBox>
+
+        </StackPanel>
+    </ScrollViewer>
+</Window>

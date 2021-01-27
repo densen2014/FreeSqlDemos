@@ -1,0 +1,28 @@
+﻿<Application x:Class="WPFORMDGV.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WPFORMDGV"
+             xmlns:converters="clr-namespace:MaterialDesignThemes.Wpf.Converters;assembly=MaterialDesignThemes.Wpf"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Convertor="clr-namespace:AME.Convertor"
+             Startup="Application_Startup"
+             Exit="Application_Exit"
+             Activated="Application_Activated">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.BlueGrey.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Convertor:IntegerToSex x:Key="IntegerToSex" />
+            <Convertor:BoolToWindowState x:Key="boolToWindowState" />
+            <Convertor:BoolToVisibility x:Key="boolToVisibility" />
+            <Convertor:BoolToVisibilityInvent x:Key="boolToVisibilityInvent" />
+            <Convertor:InventBoolenConverter x:Key="inventBoolenConverter" />
+            <converters:BooleanToVisibilityConverter x:Key="booleanToVisibilityConverter" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
+

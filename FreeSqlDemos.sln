@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeSqlDemos", "FreeSqlDemos\FreeSqlDemos.csproj", "{ECD94386-5A1D-4FBE-9804-497138FA2826}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECD94386-5A1D-4FBE-9804-497138FA2826}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECD94386-5A1D-4FBE-9804-497138FA2826}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECD94386-5A1D-4FBE-9804-497138FA2826}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECD94386-5A1D-4FBE-9804-497138FA2826}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EBFE6780-E763-447E-BDB2-E854325A8AD8}
+	EndGlobalSection
+EndGlobal

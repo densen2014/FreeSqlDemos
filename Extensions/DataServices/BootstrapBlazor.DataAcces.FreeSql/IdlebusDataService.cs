@@ -16,15 +16,15 @@ using Console = System.Console;
 namespace BootstrapBlazor.DataAcces.FreeSql
 {
     /// <summary>
-    /// FreeSql ORM 的 IDataService 接口实现
+    /// FreeSql ORM with Idlebus 的 IDataService 接口实现
     /// </summary>
-    internal class DefaultDataService<TModel> : DataServiceBase<TModel> where TModel : class, new()
+    internal class IdlebusDataService<TModel> : DataServiceBase<TModel> where TModel : class, new()
     {
         private readonly IFreeSql _db;
         /// <summary>
         /// 构造函数
         /// </summary>
-        public DefaultDataService(IFreeSql db)
+        public IdlebusDataService(IFreeSql db)
         {
             _db = db;
         }

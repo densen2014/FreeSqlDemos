@@ -71,14 +71,20 @@ namespace Densen.DataAcces.FreeSql
         QueryPageOptions Options { get; set; }
         void initTestDatas()
         {
-            if (_db.Select<TModel>().Count() < 200)
+            try
             {
-                var sql = "";
-                for (int i = 0; i < 200; i++)
+                if (_db.Select<TModel>().Count() < 200)
                 {
-                    sql += @$"INSERT INTO ""Test""(""Name"", ""DateTime"", ""Address"", ""Count"", ""Complete"", ""Education"") VALUES('周星星{i}', '2021-02-01 00:00:00', '星光大道 , {i}A', {i}, 0, 1);";
+                    var sql = "";
+                    for (int i = 0; i < 200; i++)
+                    {
+                        sql += @$"INSERT INTO ""Test""(""Name"", ""DateTime"", ""Address"", ""Count"", ""Complete"", ""Education"") VALUES('周星星{i}', '2021-02-01 00:00:00', '星光大道 , {i}A', {i}, 0, 1);";
+                    }
+                    _db.Ado.ExecuteScalar(sql);
                 }
-                _db.Ado.ExecuteScalar(sql);
+            }
+            catch (Exception)
+            {
             }
 
         }
@@ -90,7 +96,22 @@ namespace Densen.DataAcces.FreeSql
         /// <returns></returns>
         public override Task<QueryData<TModel>> QueryAsync(QueryPageOptions option)
         {
+            FetchAsync(option);
+
+            var ret = new QueryData<TModel>()
+            {
+                TotalCount = (int)(TotalCount ?? 0),
+                Items = Items
+            };
+            Options = option;
+            return Task.FromResult(ret);
+        }
+
+        private void FetchAsync(QueryPageOptions option)
+        {
+#if DEBUG
             initTestDatas();
+#endif 
 
             //.WhereDynamicFilter(dyfilter)
 
@@ -122,25 +143,16 @@ namespace Densen.DataAcces.FreeSql
                 TotalCount = option.PageIndex == 1 ? count : TotalCount;
 
             }
-
-
-            var ret = new QueryData<TModel>()
-            {
-                TotalCount = (int)TotalCount,
-                Items = Items
-            };
-            Options = option;
-            return Task.FromResult(ret);
         }
 
-        #region 生成Where子句的Lambda表达式
+#region 生成Where子句的Lambda表达式
 
         /// <summary>
         /// 生成Where子句的Lambda表达式
         /// </summary>
         /// <param name="option"></param>
         /// <returns></returns>
-        private static Expression<Func<TModel, bool>>? MakeWhereLambda(QueryPageOptions option, out bool isSerach)
+        private Expression<Func<TModel, bool>>? MakeWhereLambda(QueryPageOptions option, out bool isSerach)
         {
             Expression<Func<TModel, bool>> expression = null;
             object? searchModel = option.SearchModel;
@@ -203,7 +215,7 @@ namespace Densen.DataAcces.FreeSql
             isSerach = expression != null;
             return expression;
         }
-        #endregion
+#endregion
 
         /// <summary>
         /// 生成Where子句的DynamicFilterInfo对象
@@ -211,7 +223,7 @@ namespace Densen.DataAcces.FreeSql
         /// <param name="option"></param>
         /// <param name="isSerach"></param>
         /// <returns></returns>
-        private static DynamicFilterInfo? MakeDynamicFilterInfo(QueryPageOptions option, out bool isSerach)
+        private DynamicFilterInfo? MakeDynamicFilterInfo(QueryPageOptions option, out bool isSerach)
         {
             var filters = new List<DynamicFilterInfo>();
 
@@ -229,6 +241,8 @@ namespace Densen.DataAcces.FreeSql
                     if (propertyinfo.GetValue(searchModel) != null && !propertyinfo.GetValue(searchModel).Equals(propertyinfo.GetValue(instance)))
                     {
                         string propertyValue = propertyinfo.GetValue(searchModel).ToString();
+                        if (propertyinfo.PropertyType == typeof(int) && !IsNumeric(propertyValue)) continue;
+
                         filters.Add(new DynamicFilterInfo()
                         {
                             Field = propertyinfo.Name,
@@ -243,13 +257,15 @@ namespace Densen.DataAcces.FreeSql
             {
                 //生成默认搜索子句
                 //TODO : 支持更多类型
-                foreach (var propertyinfo in type.GetProperties().Where(a => a.PropertyType == typeof(string) ||a.PropertyType == typeof(int)).ToList())
+                foreach (var propertyinfo in type.GetProperties().Where(a => a.PropertyType == typeof(string) || a.PropertyType == typeof(int)).ToList())
                 {
+                    if (propertyinfo.PropertyType == typeof(int) && !IsNumeric(option.SearchText)) continue;
+
                     filters.Add(new DynamicFilterInfo()
                     {
                         Field = propertyinfo.Name,
-                        Operator = propertyinfo.PropertyType == typeof(int) ? DynamicFilterOperator.Equal:DynamicFilterOperator.Contains,
-                        Value = propertyinfo.PropertyType == typeof(int)? Convert .ToInt32( option.SearchText) : option.SearchText,
+                        Operator = propertyinfo.PropertyType == typeof(int) ? DynamicFilterOperator.Equal : DynamicFilterOperator.Contains,
+                        Value = propertyinfo.PropertyType == typeof(int) ? Convert.ToInt32(option.SearchText) : option.SearchText,
                     });
                 }
 
@@ -257,7 +273,7 @@ namespace Densen.DataAcces.FreeSql
 
             if (option.Filters.Any())
             {
-                foreach (var item  in option.Filters)
+                foreach (var item in option.Filters)
                 {
                     var filter = item.GetFilterConditions().First();
                     var filterOperator = DynamicFilterOperator.Contains;
@@ -291,7 +307,7 @@ namespace Densen.DataAcces.FreeSql
             {
                 DynamicFilterInfo dyfilter = new DynamicFilterInfo()
                 {
-                    Logic = string.IsNullOrEmpty(option.SearchText) ? DynamicFilterLogic.And: DynamicFilterLogic.Or,
+                    Logic = string.IsNullOrEmpty(option.SearchText) ? DynamicFilterLogic.And : DynamicFilterLogic.Or,
                     Filters = filters
                 };
                 isSerach = true;
@@ -302,6 +318,7 @@ namespace Densen.DataAcces.FreeSql
             isSerach = false;
             return null;
         }
+        private bool IsNumeric(string text) => double.TryParse(text, out _);
 
     }
 }

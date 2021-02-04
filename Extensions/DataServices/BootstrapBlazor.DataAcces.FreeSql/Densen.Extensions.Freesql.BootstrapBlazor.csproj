@@ -4,7 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <IsPackable>true</IsPackable>
     <PackageIcon>logo.png</PackageIcon>
-    <Version>0.0.1</Version>
+    <Version>0.0.2</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Company>Densen Informatica</Company>
     <Authors>Alex Chow</Authors>
@@ -15,7 +15,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>FreeSql DataAcces for BootstrapBlazor</PackageTags>
     <AssemblyName>Densen.FreeSql.Extensions.BootstrapBlazor</AssemblyName>
-    <RootNamespace>Densen.DataAcces.FreeSql</RootNamespace>
+    <RootNamespace>Densen.Extensions.Freesql.BootstrapBlazor</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

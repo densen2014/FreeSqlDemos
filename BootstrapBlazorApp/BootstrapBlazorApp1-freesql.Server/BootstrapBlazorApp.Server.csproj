@@ -20,7 +20,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Extensions\DataServices\BootstrapBlazor.DataAcces.FreeSql\Densen.DataAcces.FreeSql.csproj" />
+      <ProjectReference Include="..\..\Extensions\DataServices\BootstrapBlazor.DataAcces.FreeSql\Densen.Extensions.Freesql.BootstrapBlazor.csproj" />
     </ItemGroup>
 
 </Project>

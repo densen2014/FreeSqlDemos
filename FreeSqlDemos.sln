@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xamarinFormApp.iOS", "xamar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BootstrapBlazor.DataAcces.FreeSql", "Extensions\DataServices\BootstrapBlazor.DataAcces.FreeSql\BootstrapBlazor.DataAcces.FreeSql.csproj", "{C6718A5E-88DB-4362-BD74-3BA9565DDA78}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", "{8D5D78FF-7626-4859-9738-9B67885D255E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -139,6 +141,7 @@ Global
 		{12EC22F5-2586-4AD3-AE03-319C2FAC0B06} = {7CEAAA9E-9738-4989-A665-E46B3356667F}
 		{0BFC3652-7CD1-49E4-BA9A-70E5EC818FCE} = {7CEAAA9E-9738-4989-A665-E46B3356667F}
 		{F4C814E7-FCDC-4596-854D-8FA5CD992C67} = {7CEAAA9E-9738-4989-A665-E46B3356667F}
+		{C6718A5E-88DB-4362-BD74-3BA9565DDA78} = {8D5D78FF-7626-4859-9738-9B67885D255E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EBFE6780-E763-447E-BDB2-E854325A8AD8}

@@ -35,29 +35,5 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddSingleton(typeof(IDataService<>), typeof(DefaultDataService<>));
             return services;
         }
-
-        //TODO : 增加 FreeSql with Idlebus 数据库操作服务
-
-        /// <summary>
-        /// 增加 FreeSql with Idlebus 数据库操作服务
-        /// </summary>
-        /// <param name="services"></param>
-        /// <param name="optionsAction"></param>
-        /// <param name="configureAction"></param>
-        /// <returns></returns>
-        public static IServiceCollection AddFreeSqlIdlebus(this IServiceCollection services, Action<FreeSqlBuilder> optionsAction, Action<IFreeSql>? configureAction = null)
-        {
-            services.AddSingleton<IFreeSql>(sp =>
-            {
-                var builder = new FreeSqlBuilder();
-                optionsAction(builder);
-                var instance = builder.Build();
-                configureAction?.Invoke(instance);
-                return instance;
-            });
-
-            services.AddSingleton(typeof(IDataService<>), typeof(IdlebusDataService<>));
-            return services;
-        }
     }
 }

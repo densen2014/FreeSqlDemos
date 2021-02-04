@@ -1,0 +1,13 @@
+﻿@inherits BootstrapComponentBase
+
+<h4>@Title</h4>
+
+<p>@(new MarkupString(Introduction))</p>
+
+<h5>@SubTitle</h5>
+
+<div class="card card-demo">
+    <div class="card-body">
+        @ChildContent
+    </div>
+</div>

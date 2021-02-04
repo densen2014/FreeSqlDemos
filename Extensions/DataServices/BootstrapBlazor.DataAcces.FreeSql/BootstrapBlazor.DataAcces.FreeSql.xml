@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BootstrapBlazor.DataAcces.FreeSql</name>
+    </assembly>
+    <members>
+        <member name="T:BootstrapBlazor.DataAcces.FreeSql.DefaultDataService`1">
+            <summary>
+            FreeSql ORM 的 IDataService 接口实现
+            </summary>
+        </member>
+        <member name="M:BootstrapBlazor.DataAcces.FreeSql.DefaultDataService`1.#ctor(IFreeSql)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:BootstrapBlazor.DataAcces.FreeSql.DefaultDataService`1.DeleteAsync(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            删除方法
+            </summary>
+            <param name="models"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BootstrapBlazor.DataAcces.FreeSql.DefaultDataService`1.SaveAsync(`0)">
+            <summary>
+            保存方法
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="P:BootstrapBlazor.DataAcces.FreeSql.DefaultDataService`1.TotalCount">
+            <summary>
+            缓存记录总数
+            </summary>
+        </member>
+        <member name="P:BootstrapBlazor.DataAcces.FreeSql.DefaultDataService`1.Items">
+            <summary>
+            缓存记录
+            </summary>
+        </member>
+        <member name="P:BootstrapBlazor.DataAcces.FreeSql.DefaultDataService`1.Options">
+            <summary>
+            缓存查询条件
+            </summary>
+        </member>
+        <member name="M:BootstrapBlazor.DataAcces.FreeSql.DefaultDataService`1.QueryAsync(BootstrapBlazor.Components.QueryPageOptions)">
+            <summary>
+            查询方法
+            </summary>
+            <param name="option"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BootstrapBlazor.DataAcces.FreeSql.DefaultDataService`1.MakeWhereLambda(BootstrapBlazor.Components.QueryPageOptions,System.Boolean@)">
+            <summary>
+            生成Where子句的Lambda表达式
+            </summary>
+            <param name="option"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BootstrapBlazor.DataAcces.FreeSql.DefaultDataService`1.MakeDynamicFilterInfo(BootstrapBlazor.Components.QueryPageOptions,System.Boolean@)">
+            <summary>
+            生成Where子句的DynamicFilterInfo对象
+            </summary>
+            <param name="option"></param>
+            <param name="isSerach"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.FreeSqlServiceCollectionExtensions">
+            <summary>
+            BootstrapBlazor 服务扩展类
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.FreeSqlServiceCollectionExtensions.AddFreeSql(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{FreeSql.FreeSqlBuilder},System.Action{IFreeSql})">
+            <summary>
+            增加 FreeSql 数据库操作服务
+            </summary>
+            <param name="services"></param>
+            <param name="optionsAction"></param>
+            <param name="configureAction"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Linq.Expressions.LambadaExpression">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Linq.Expressions.LambadaExpression.True``1">
+            <summary>
+            创建lambda表达式：p=>true
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Linq.Expressions.LambadaExpression.False``1">
+            <summary>
+            创建lambda表达式：p=>false
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Linq.Expressions.LambadaExpression.CreateEqual``1(System.String,System.Object)">
+            <summary>
+            创建lambda表达式：p=>p.propertyName == propertyValue
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="column"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Linq.Expressions.LambadaExpression.CreateNotEqual``1(System.String,System.String)">
+            <summary>
+            创建lambda表达式：p=>p.propertyName != propertyValue
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="propertyName"></param>
+            <param name="propertyValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Linq.Expressions.LambadaExpression.CreateGreaterThan``1(System.String,System.String)">
+            <summary>
+            创建lambda表达式：p=>p.propertyName > propertyValue
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="column"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:System.Linq.Expressions.LambadaExpression.CreateLessThan``1(System.String,System.String)" -->
+        <member name="M:System.Linq.Expressions.LambadaExpression.CreateGreaterThanOrEqual``1(System.String,System.String)">
+            <summary>
+            创建lambda表达式：p=>p.propertyName >= propertyValue
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="column"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:System.Linq.Expressions.LambadaExpression.CreateLessThanOrEqual``1(System.String,System.String)" -->
+        <member name="M:System.Linq.Expressions.LambadaExpression.GetContains``1(System.String,System.String)">
+            <summary>
+            创建lambda表达式：p=>p.propertyName.Contains(propertyValue)
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="column"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Linq.Expressions.LambadaExpression.GetNotContains``1(System.String,System.String)">
+            <summary>
+            创建lambda表达式：!(p=>p.propertyName.Contains(propertyValue))
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="column"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

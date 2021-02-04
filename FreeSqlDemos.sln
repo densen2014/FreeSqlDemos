@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "FreeSqlDemos\ConsoleApp.csproj", "{ECD94386-5A1D-4FBE-9804-497138FA2826}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "FreeSqlDemos\ConsoleApp.csproj", "{ECD94386-5A1D-4FBE-9804-497138FA2826}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfDatagridView", "WpfDatagridView\WpfDatagridView\WpfDatagridView.csproj", "{1CC217E8-2D70-4832-8409-A60910B91798}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xamarinFormApp.Android", "xamarinFormApp\xamarinFormApp.Android\xamarinFormApp.Android.csproj", "{0BFC3652-7CD1-49E4-BA9A-70E5EC818FCE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xamarinFormApp.iOS", "xamarinFormApp\xamarinFormApp.iOS\xamarinFormApp.iOS.csproj", "{F4C814E7-FCDC-4596-854D-8FA5CD992C67}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BootstrapBlazor.DataAcces.FreeSql", "Extensions\DataServices\BootstrapBlazor.DataAcces.FreeSql\BootstrapBlazor.DataAcces.FreeSql.csproj", "{C6718A5E-88DB-4362-BD74-3BA9565DDA78}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,6 +119,18 @@ Global
 		{F4C814E7-FCDC-4596-854D-8FA5CD992C67}.Release|iPhone.Build.0 = Release|iPhone
 		{F4C814E7-FCDC-4596-854D-8FA5CD992C67}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{F4C814E7-FCDC-4596-854D-8FA5CD992C67}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{C6718A5E-88DB-4362-BD74-3BA9565DDA78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6718A5E-88DB-4362-BD74-3BA9565DDA78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6718A5E-88DB-4362-BD74-3BA9565DDA78}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{C6718A5E-88DB-4362-BD74-3BA9565DDA78}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{C6718A5E-88DB-4362-BD74-3BA9565DDA78}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{C6718A5E-88DB-4362-BD74-3BA9565DDA78}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{C6718A5E-88DB-4362-BD74-3BA9565DDA78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6718A5E-88DB-4362-BD74-3BA9565DDA78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6718A5E-88DB-4362-BD74-3BA9565DDA78}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{C6718A5E-88DB-4362-BD74-3BA9565DDA78}.Release|iPhone.Build.0 = Release|Any CPU
+		{C6718A5E-88DB-4362-BD74-3BA9565DDA78}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{C6718A5E-88DB-4362-BD74-3BA9565DDA78}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

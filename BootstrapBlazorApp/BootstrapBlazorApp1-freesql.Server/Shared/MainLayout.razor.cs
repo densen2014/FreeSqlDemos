@@ -25,8 +25,9 @@ namespace BootstrapBlazorApp.Server.Shared
         {
             var ret = new List<MenuItem>
             {
-                new MenuItem() { Text = "项目GitHub", Icon = "fa fa-fw fa-home", Url = "https://github.com/densen2014/BootstrapBlazorApp1_freesql" },
-                new MenuItem() { Text = "Index", Icon = "fa fa-fw fa-fa", Url = "" },
+                new MenuItem() { Text = "项目GitHub", Icon = "fa fa-fw fa-home", Url = "https://github.com/densen2014/FreeSqlDemos" },
+                new MenuItem() { Text = "Table基本", Icon = "fa fa-fw fa-fa", Url = "" },
+                new MenuItem() { Text = "Table使用注入数据服务", Icon = "fa fa-fw fa-fa", Url = "/tables/fsql" },
                 new MenuItem() { Text = "Counter", Icon = "fa fa-fw fa-check-square-o", Url = "counter" },
                 new MenuItem() { Text = "FetchData", Icon = "fa fa-fw fa-database", Url = "fetchdata" },
                 new MenuItem() { Text = "系统设置", Icon = "fa fa-fw fa-gears", Url = "#" },

@@ -13,7 +13,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Console = System.Console;
 
-namespace BootstrapBlazor.DataAcces.FreeSql
+namespace Densen.DataAcces.FreeSql
 {
     /// <summary>
     /// FreeSql ORM with Idlebus 的 IDataService 接口实现

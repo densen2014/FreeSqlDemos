@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xamarinFormApp.Android", "x
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xamarinFormApp.iOS", "xamarinFormApp\xamarinFormApp.iOS\xamarinFormApp.iOS.csproj", "{F4C814E7-FCDC-4596-854D-8FA5CD992C67}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BootstrapBlazor.DataAcces.FreeSql", "Extensions\DataServices\BootstrapBlazor.DataAcces.FreeSql\BootstrapBlazor.DataAcces.FreeSql.csproj", "{C6718A5E-88DB-4362-BD74-3BA9565DDA78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Densen.DataAcces.FreeSql", "Extensions\DataServices\BootstrapBlazor.DataAcces.FreeSql\Densen.DataAcces.FreeSql.csproj", "{C6718A5E-88DB-4362-BD74-3BA9565DDA78}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", "{8D5D78FF-7626-4859-9738-9B67885D255E}"
 EndProject

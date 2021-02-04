@@ -1,63 +1,63 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>BootstrapBlazor.DataAcces.FreeSql</name>
+        <name>Densen.DataAcces.FreeSql</name>
     </assembly>
     <members>
-        <member name="T:BootstrapBlazor.DataAcces.FreeSql.DefaultDataService`1">
+        <member name="T:Densen.DataAcces.FreeSql.DefaultDataService`1">
             <summary>
             FreeSql ORM 的 IDataService 接口实现
             </summary>
         </member>
-        <member name="M:BootstrapBlazor.DataAcces.FreeSql.DefaultDataService`1.#ctor(IFreeSql)">
+        <member name="M:Densen.DataAcces.FreeSql.DefaultDataService`1.#ctor(IFreeSql)">
             <summary>
             构造函数
             </summary>
         </member>
-        <member name="M:BootstrapBlazor.DataAcces.FreeSql.DefaultDataService`1.DeleteAsync(System.Collections.Generic.IEnumerable{`0})">
+        <member name="M:Densen.DataAcces.FreeSql.DefaultDataService`1.DeleteAsync(System.Collections.Generic.IEnumerable{`0})">
             <summary>
             删除方法
             </summary>
             <param name="models"></param>
             <returns></returns>
         </member>
-        <member name="M:BootstrapBlazor.DataAcces.FreeSql.DefaultDataService`1.SaveAsync(`0)">
+        <member name="M:Densen.DataAcces.FreeSql.DefaultDataService`1.SaveAsync(`0)">
             <summary>
             保存方法
             </summary>
             <param name="model"></param>
             <returns></returns>
         </member>
-        <member name="P:BootstrapBlazor.DataAcces.FreeSql.DefaultDataService`1.TotalCount">
+        <member name="P:Densen.DataAcces.FreeSql.DefaultDataService`1.TotalCount">
             <summary>
             缓存记录总数
             </summary>
         </member>
-        <member name="P:BootstrapBlazor.DataAcces.FreeSql.DefaultDataService`1.Items">
+        <member name="P:Densen.DataAcces.FreeSql.DefaultDataService`1.Items">
             <summary>
             缓存记录
             </summary>
         </member>
-        <member name="P:BootstrapBlazor.DataAcces.FreeSql.DefaultDataService`1.Options">
+        <member name="P:Densen.DataAcces.FreeSql.DefaultDataService`1.Options">
             <summary>
             缓存查询条件
             </summary>
         </member>
-        <member name="M:BootstrapBlazor.DataAcces.FreeSql.DefaultDataService`1.QueryAsync(BootstrapBlazor.Components.QueryPageOptions)">
+        <member name="M:Densen.DataAcces.FreeSql.DefaultDataService`1.QueryAsync(BootstrapBlazor.Components.QueryPageOptions)">
             <summary>
             查询方法
             </summary>
             <param name="option"></param>
             <returns></returns>
         </member>
-        <member name="M:BootstrapBlazor.DataAcces.FreeSql.DefaultDataService`1.MakeWhereLambda(BootstrapBlazor.Components.QueryPageOptions,System.Boolean@)">
+        <member name="M:Densen.DataAcces.FreeSql.DefaultDataService`1.MakeWhereLambda(BootstrapBlazor.Components.QueryPageOptions,System.Boolean@)">
             <summary>
             生成Where子句的Lambda表达式
             </summary>
             <param name="option"></param>
             <returns></returns>
         </member>
-        <member name="M:BootstrapBlazor.DataAcces.FreeSql.DefaultDataService`1.MakeDynamicFilterInfo(BootstrapBlazor.Components.QueryPageOptions,System.Boolean@)">
+        <member name="M:Densen.DataAcces.FreeSql.DefaultDataService`1.MakeDynamicFilterInfo(BootstrapBlazor.Components.QueryPageOptions,System.Boolean@)">
             <summary>
             生成Where子句的DynamicFilterInfo对象
             </summary>

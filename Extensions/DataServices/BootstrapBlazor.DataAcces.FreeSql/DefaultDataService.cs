@@ -107,7 +107,7 @@ namespace Densen.DataAcces.FreeSql
             return Task.FromResult(ret);
         }
 
-        private void FetchAsync(QueryPageOptions option)
+        private void FetchAsync(QueryPageOptions options)
         {
 #if DEBUG
             initTestDatas();
@@ -116,14 +116,14 @@ namespace Densen.DataAcces.FreeSql
             //.WhereDynamicFilter(dyfilter)
 
             //两种版本 var lambda = MakeWhereLambda(option, out var isSerach);
-            var dynamicFilterInfo = MakeDynamicFilterInfo(option, out var isSerach);
+            var dynamicFilterInfo = MakeDynamicFilterInfo(options, out var isSerach);
 
-            if (TotalCount != null && !isSerach && option.PageItems != Options.PageItems && TotalCount <= Options.PageItems)
+            if (TotalCount != null && !isSerach && options.PageItems != Options.PageItems && TotalCount <= Options.PageItems)
             {
                 //当选择的每页显示数量大于总数时，强制认为是一页
 
                 //无搜索,并且总数<=分页总数直接使用内存排序和搜索
-                Console.WriteLine($"无搜索,分页数相等{ option.PageItems}/{ Options.PageItems},直接使用内存排序和搜索");
+                Console.WriteLine($"无搜索,分页数相等{ options.PageItems}/{ Options.PageItems},直接使用内存排序和搜索");
             }
             else
             {
@@ -132,15 +132,18 @@ namespace Densen.DataAcces.FreeSql
                 if (isSerach)
                     fsql_select = fsql_select.WhereDynamicFilter(dynamicFilterInfo);
 
-                fsql_select = fsql_select.OrderByPropertyNameIf(option.SortOrder != SortOrder.Unset, option.SortName, option.SortOrder == SortOrder.Asc);
+                fsql_select = fsql_select.OrderByPropertyNameIf(options.SortOrder != SortOrder.Unset, options.SortName, options.SortOrder == SortOrder.Asc);
 
                 //分页==1才获取记录总数量,省点性能
                 long count = 0;
-                if (option.PageIndex == 1) fsql_select = fsql_select.Count(out count);
+                if (options.PageIndex == 1) fsql_select = fsql_select.Count(out count);
 
-                Items = fsql_select.Page(option.PageIndex, option.PageItems).ToList();
-
-                TotalCount = option.PageIndex == 1 ? count : TotalCount;
+                //判断是否分页
+                if (options.IsPage) fsql_select = fsql_select.Page(options.PageIndex, options.PageItems);
+                
+                Items = fsql_select.ToList();
+                
+                TotalCount = options.PageIndex == 1 ? count : TotalCount;
 
             }
         }

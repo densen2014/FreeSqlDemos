@@ -3,6 +3,7 @@
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
         <AssemblyName>BootstrapBlazorApp.Server</AssemblyName>
+        <UserSecretsId>3934cf9f-d63b-4045-b91e-85c21e8016a2</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>
@@ -10,8 +11,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="BootstrapBlazor" Version="5.0.25" />
-        <PackageReference Include="FreeSql.All" Version="2.3.200" />
+        <PackageReference Include="BootstrapBlazor" Version="5.0.31-beta02" />
+        <PackageReference Include="FreeSql.All" Version="2.5.100" />
     </ItemGroup>
 
     <ItemGroup>

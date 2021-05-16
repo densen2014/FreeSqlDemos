@@ -1,0 +1,17 @@
+﻿@Text
+<br />
+<a href="@(apibase + API)" target="_blank">@(apibase + API)</a>
+<br />
+
+@code{
+    [Parameter] public string API { get; set; }
+    [Parameter] public string Text { get; set; }
+    string _config_API;
+
+    string apibase;
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        apibase = (!string.IsNullOrEmpty(API) && API.StartsWith("http")) ? "" : (string.IsNullOrEmpty(_config_API) ? "http://localhost:5000/api/" : _config_API);
+    }
+}

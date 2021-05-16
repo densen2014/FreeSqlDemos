@@ -22,6 +22,18 @@ namespace WebApi.Controllers
             _fsql = fsql;
         }
 
+        /// <summary>
+        /// 测试api工作是否正常
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("test")]
+        public string Test() => "OK";
+
+
+        /// <summary>
+        /// 获取数据
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IEnumerable<Item> Get()
         {
@@ -30,6 +42,12 @@ namespace WebApi.Controllers
             return ItemList;
         }
 
+        /// <summary>
+        /// put或者GET的put方法插入一条数据
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        [HttpGet("Put")]
         [HttpPut]
         public IEnumerable<Item> Put(string name)
         {

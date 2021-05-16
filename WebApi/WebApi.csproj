@@ -2,11 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>1c616b1d-d5e0-42d1-8fb1-f02e596c8147</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
-    <PackageReference Include="FreeSql.Provider.Sqlite" Version="2.3.200" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4" />
+    <PackageReference Include="FreeSql.Provider.Sqlite" Version="2.5.100" />
   </ItemGroup>
 
 </Project>

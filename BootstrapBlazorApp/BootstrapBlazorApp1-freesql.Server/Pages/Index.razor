@@ -3,25 +3,34 @@
 
 <h3>Table 表格</h3>
 
-<Table TItem="Item"
-       Items="@dataService.items"
-       IsStriped="true"
-       IsBordered="true"
-       RenderModel="TableRenderModel.Auto"
-       ClickToSelect="true"
-       ShowDefaultButtons="true"
-       ShowDeleteButton="true"
-       DoubleClickToEdit="true"
-       OnResetSearchAsync="@OnResetSearchAsync"
-       OnQueryAsync="@OnEditQueryAsync"
-       OnAddAsync="@OnAddAsync"
-       OnSaveAsync="@OnSaveAsync"
-       OnDeleteAsync="@OnDeleteAsync"
-       ShowToolbar="true"
-       IsPagination="true"
-       PageItemsSource="@PageItemsSource"
-       ShowSearch="true"
-       ShowExtendButtons="true"
-       SearchModel="@SearchModel"
-       AutoGenerateColumns="true">
-</Table>
+<Tab>
+    <TabItem Text="表格">
+        <Table TItem="Item"
+               Items="@dataService.items"
+               IsStriped="true"
+               IsBordered="true"
+               RenderModel="TableRenderModel.Auto"
+               ClickToSelect="true"
+               ShowDefaultButtons="true"
+               ShowDeleteButton="true"
+               DoubleClickToEdit="true"
+               OnResetSearchAsync="@OnResetSearchAsync"
+               OnQueryAsync="@OnEditQueryAsync"
+               OnAddAsync="@OnAddAsync"
+               OnSaveAsync="@OnSaveAsync"
+               OnDeleteAsync="@OnDeleteAsync"
+               ShowToolbar="true"
+               IsPagination="true"
+               PageItemsSource="@PageItemsSource"
+               ShowSearch="true"
+               ShowExtendButtons="true"
+               SearchModel="@SearchModel"
+               AutoGenerateColumns="true">
+        </Table>
+    </TabItem>
+    <TabItem Text="项目源码">
+        <SrcComponent />
+    </TabItem>
+</Tab>
+
+

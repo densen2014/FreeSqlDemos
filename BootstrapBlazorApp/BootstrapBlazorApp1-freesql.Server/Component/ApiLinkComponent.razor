@@ -1,0 +1,12 @@
+﻿<a href="@(apibase + API)" target="_blank">@(apibase + API)</a>
+<br />
+@code{
+    [Parameter] public string API { get; set; }
+
+    string apibase;
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+ 
+    }
+}

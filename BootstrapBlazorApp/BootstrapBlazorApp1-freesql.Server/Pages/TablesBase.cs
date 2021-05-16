@@ -76,20 +76,20 @@ namespace BootstrapBlazorApp.Server.Pages
         /// </summary>
         [Required(ErrorMessage = "姓名不能为空")]
         [AutoGenerateColumn(Order = 10, Filterable = true,Sortable = true)]
-        [ColumnName(Name = "姓名",  ResourceType = typeof(BindItem))]
+        [DisplayName("姓名")]
         public string? Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [AutoGenerateColumn(Order = 1, FormatString = "yyyy-MM-dd", Width = 180, Sortable = true)]
-        [ColumnName(Name = "日期",  ResourceType = typeof(BindItem))]
+        [DisplayName("日期")]
         public DateTime? DateTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [ColumnName(Name = "地址",   ResourceType = typeof(BindItem))]
+        [DisplayName("地址")]
         [Required(ErrorMessage = "地址不能为空")]
         [AutoGenerateColumn(Order = 20, Filterable = true, Sortable = true)]
         public string? Address { get; set; }
@@ -97,14 +97,14 @@ namespace BootstrapBlazorApp.Server.Pages
         /// <summary>
         /// 
         /// </summary>
-        [ColumnName(Name = "数量",   ResourceType = typeof(BindItem))]
+        [DisplayName("数量")]
         [AutoGenerateColumn(Order = 40, Sortable = true)]
         public int Count { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [ColumnName(Name = "是/否",   ResourceType = typeof(BindItem))]
+        [DisplayName("是/否")]
         [AutoGenerateColumn(Order = 50, Sortable = true)]
         public bool Complete { get; set; }
 
@@ -112,7 +112,7 @@ namespace BootstrapBlazorApp.Server.Pages
         /// 
         /// </summary>
         [Required(ErrorMessage = "请选择学历")]
-        [ColumnName(Name = "学历",   ResourceType = typeof(BindItem))]
+        [DisplayName("学历")]
         [AutoGenerateColumn(Order = 60, Sortable = true)]
         //[EnumConverter(typeof(EnumEducation))]
         public EnumEducation? Education { get; set; }

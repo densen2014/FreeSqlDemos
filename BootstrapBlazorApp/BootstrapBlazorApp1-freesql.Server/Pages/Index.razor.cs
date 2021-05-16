@@ -110,8 +110,8 @@ namespace BootstrapBlazorApp.Server.Pages
             if (!string.IsNullOrEmpty(options.SortName))
             {
                 // 外部未进行排序，内部自动进行排序处理
-                var invoker = SortLambdaCache.GetOrAdd(typeof(Item), key => items.GetSortLambda().Compile());
-                items = invoker(items, options.SortName, options.SortOrder);
+                //var invoker = SortLambdaCache.GetOrAdd(typeof(Item), key => items.GetSortLambda().Compile());
+                //items = invoker(items, options.SortName, options.SortOrder);
 
                 // 通知内部已经过滤数据了
                 isSorted = true;

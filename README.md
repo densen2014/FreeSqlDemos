@@ -17,23 +17,25 @@ https://github.com/densen2014/BootstrapBlazorApp1_freesql
 [Blazor] ZXing Blazor 扫码组件 / 手写签名 Handwritten 组件
 https://github.com/densen2014/ZXingBlazor
 
-Demo
+Demo SSR
 ----
-[SSR]数据采集以及维护 SSR+API, 使用Blazor+FreeSql+BootstrapBlazor
+数据采集以及维护 SSR+API, 使用Blazor+FreeSql+BootstrapBlazor
 https://ssr3.app1.es/
 
-[SSR]POS空闲队列大屏提醒 Cola libre
+POS空闲队列大屏提醒 Cola libre
 https://ssr6.app1.es/
 https://nc.app1.es/
 
-BootstrapBlazor 的WASM
-https://ba.app1.es/
-
-[SSR]BlazorPOS.simple 纯商品查询工程
+BlazorPOS.simple 纯商品查询工程
 https://ssr1.app1.es/
 
-[SSR]bb+fsql演示 . BootstrapBlazorApp1_freesql 工程
+bb+fsql演示 . BootstrapBlazorApp1_freesql 工程
 https://ssr5.app1.es/
+
+Demo WASM
+----
+BootstrapBlazor 的WASM
+https://ba.app1.es/
 
 [wasm]uno wasm版本下单app
 https://uno.app1.es/

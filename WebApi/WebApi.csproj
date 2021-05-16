@@ -5,6 +5,11 @@
     <UserSecretsId>1c616b1d-d5e0-42d1-8fb1-f02e596c8147</UserSecretsId>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>WebApi.xml</DocumentationFile>
+     <NoWarn>1701;1702;1591</NoWarn>
+ </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4" />
     <PackageReference Include="FreeSql.Provider.Sqlite" Version="2.5.100" />

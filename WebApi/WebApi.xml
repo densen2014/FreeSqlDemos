@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:WebApi.Controllers.testController">
+            <summary>
+            freesql API
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.testController.Test">
+            <summary>
+            测试api工作是否正常
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.testController.Get">
+            <summary>
+            获取数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.testController.Put(System.String)">
+            <summary>
+            put或者GET的put方法插入一条数据
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

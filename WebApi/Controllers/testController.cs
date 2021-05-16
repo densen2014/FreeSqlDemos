@@ -8,8 +8,11 @@ using static WebApi.Startup;
 
 namespace WebApi.Controllers
 {
+    /// <summary>
+    /// freesql API
+    /// </summary>
     [ApiController]
-    [Route("[controller]")]
+    [Route("[controller]")] 
     public class testController : ControllerBase
     {
 

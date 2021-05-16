@@ -38,7 +38,7 @@ ZXing Blazor 扫码组件 / 手写签名 Handwritten 组件
 https://zxingblazor.app1.es/
 
 FreeSql WebAPI [日本服务器]
-https://jpapi.app1.es/index.html
+https://jpapi.app1.es/
 
 Demo WASM
 ----

@@ -21,6 +21,8 @@ Demo SSR
 ----
 数据采集以及维护 SSR+API, 使用Blazor+FreeSql+BootstrapBlazor
 https://ssr3.app1.es/
+[JP服务器]
+https://s1.app1.es/
 
 POS空闲队列提醒 Cola libre
 https://ssr6.app1.es/

@@ -15,5 +15,12 @@ https://github.com/densen2014/xamarinFormApp-freesql
 https://github.com/densen2014/BootstrapBlazorApp1_freesql
 
 [Blazor] ZXing Blazor 扫码组件 / 手写签名 Handwritten 组件
-
 https://github.com/densen2014/ZXingBlazor
+
+Demo
+数据采集以及维护 SSR+API, 使用Blazor+FreeSql+BootstrapBlazor
+https://ssr3.app1.es/
+
+POS空闲队列大屏提醒 Cola libre
+https://ssr6.app1.es/
+https://nc.app1.es/

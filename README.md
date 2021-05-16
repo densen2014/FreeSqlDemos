@@ -24,3 +24,27 @@ https://ssr3.app1.es/
 POS空闲队列大屏提醒 Cola libre
 https://ssr6.app1.es/
 https://nc.app1.es/
+
+BootstrapBlazor 的WASM
+https://ba.app1.es/
+
+BlazorPOS.simple 纯商品查询工程
+https://ssr1.app1.es/
+
+bb+fsql演示 . BootstrapBlazorApp1_freesql 工程
+https://ssr5.app1.es/
+
+uno wasm版本下单app
+https://uno.app1.es/
+
+BlazorPOS.simple wasm 纯商品查询工程
+https://wasm1.app1.es/
+
+FreeRes点餐工程
+https://wasm2.app1.es/
+
+BlazorPOS工程
+https://wasm4.app1.es/
+
+uno的ch9 wasm版本
+https://y2.916423330.com/

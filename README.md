@@ -33,11 +33,13 @@ https://ssr1.app1.es/
 
 bb+fsql演示 . BootstrapBlazorApp1_freesql 工程
 https://ssr5.app1.es/
+[JP服务器]
+https://s2.app1.es/
 
 ZXing Blazor 扫码组件 / 手写签名 Handwritten 组件
 https://zxingblazor.app1.es/
 
-FreeSql WebAPI [日本服务器]
+FreeSql WebAPI [JP服务器]
 https://jpapi.app1.es/
 
 Demo WASM

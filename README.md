@@ -32,8 +32,14 @@ https://ssr1.app1.es/
 bb+fsql演示 . BootstrapBlazorApp1_freesql 工程
 https://ssr5.app1.es/
 
+ZXing Blazor 扫码组件 / 手写签名 Handwritten 组件
+https://zxingblazor.app1.es/
+
 Demo WASM
 ----
+ZXing Blazor 扫码组件 / 手写签名 Handwritten 组件
+https://densen2014.github.io/
+
 BootstrapBlazor 的WASM
 https://ba.app1.es/
 

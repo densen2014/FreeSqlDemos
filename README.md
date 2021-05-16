@@ -59,6 +59,8 @@ https://uno.app1.es/
 
 [wasm]BlazorPOS.simple wasm 纯商品查询工程
 https://wasm1.app1.es/
+[JP服务器]
+https://jpwasm.app1.es/
 
 [wasm]FreeRes点餐工程
 https://wasm2.app1.es/

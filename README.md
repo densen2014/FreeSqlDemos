@@ -22,8 +22,10 @@ Demo SSR
 数据采集以及维护 SSR+API, 使用Blazor+FreeSql+BootstrapBlazor
 https://ssr3.app1.es/
 
-POS空闲队列大屏提醒 Cola libre
+POS空闲队列提醒 Cola libre
 https://ssr6.app1.es/
+
+POS空闲队列大屏提醒 Cola libre
 https://nc.app1.es/
 
 BlazorPOS.simple 纯商品查询工程

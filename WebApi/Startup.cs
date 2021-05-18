@@ -38,7 +38,7 @@ namespace WebApi
         IFreeSql fsql = new FreeSql.FreeSqlBuilder()
             .UseConnectionString(FreeSql.DataType.Sqlite, "Data Source=document.db; Pooling=true;Min Pool Size=1")
             .UseAutoSyncStructure(true) //自动同步实体结构【开发环境必备】
-            .UseMonitorCommand(cmd => Console.Write(cmd.CommandText))
+            .UseMonitorCommand(cmd => Console.Write(cmd.CommandText))//使用azure的app service 应用服务 Linux版本, 好像不能使用  
             .Build();
 
         public Startup(IConfiguration configuration)
@@ -72,16 +72,16 @@ namespace WebApi
 
 
             Console.WriteLine("ItemList: " + ItemList.Count());
-            
-            
-            
+
+
+
             services.AddSingleton(fsql);
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.IncludeXmlComments(System.IO.Path.Combine(AppContext.BaseDirectory, "WebApi.xml"), true);
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApi", Version = "v1", Description = "工程源码 https://github.com/densen2014/FreeSqlDemos" });
-            });  
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -91,12 +91,12 @@ namespace WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
-                app.UseSwagger();
-                app.UseSwaggerUI(c =>
-                {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "FreesSQL Demo WebApi v1");
-                    c.RoutePrefix = string.Empty;
-                });
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "FreesSQL Demo WebApi v1");
+                c.RoutePrefix = string.Empty;
+            });
 
             app.UseHttpsRedirection();
 

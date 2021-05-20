@@ -17,7 +17,6 @@ https://github.com/densen2014/BootstrapBlazorApp1_freesql
 [Blazor] BootstrapBlazor 的各种Demo
 https://github.com/densen2014/BootstrapBlazorDemo
 
-
 [Blazor] ZXing Blazor 扫码组件 / 手写签名 Handwritten 组件
 https://github.com/densen2014/ZXingBlazor
 
@@ -37,18 +36,17 @@ https://nc.app1.es/
 BlazorPOS.simple 纯商品查询工程
 https://ssr1.app1.es/
 
+BootstrapBlazor 的各种Demo
+https://alexssr88.azurewebsites.net/incell
+
 bb+fsql演示 . BootstrapBlazorApp1_freesql 工程
-https://ssr5.app1.es/
-[JP服务器]
-https://s2.app1.es/
+https://ssr5.app1.es/ 
 
 ZXing Blazor 扫码组件 / 手写签名 Handwritten 组件
 https://zxingblazor.app1.es/
 
 FreeSql WebAPI 
 https://api5.app1.es/
-[JP服务器]
-https://jpapi.app1.es/
 
 Demo WASM
 ----
@@ -63,8 +61,6 @@ https://uno.app1.es/
 
 [wasm]BlazorPOS.simple wasm 纯商品查询工程
 https://wasm1.app1.es/
-[JP服务器]
-https://jpwasm.app1.es/
 
 [wasm]FreeRes点餐工程
 https://wasm2.app1.es/

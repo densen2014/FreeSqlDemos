@@ -14,6 +14,10 @@ https://github.com/densen2014/xamarinFormApp-freesql
 [Blazor] 快速维护数据: BootstrapBlazor + freesql
 https://github.com/densen2014/BootstrapBlazorApp1_freesql
 
+[Blazor] BootstrapBlazor 的各种Demo
+https://github.com/densen2014/BootstrapBlazorDemo
+
+
 [Blazor] ZXing Blazor 扫码组件 / 手写签名 Handwritten 组件
 https://github.com/densen2014/ZXingBlazor
 

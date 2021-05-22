@@ -12,7 +12,7 @@ xamarinFormApp
 https://github.com/densen2014/xamarinFormApp-freesql
 
 [Blazor] 快速维护数据: BootstrapBlazor + freesql
-https://github.com/densen2014/BootstrapBlazorApp1_freesql
+https://github.com/densen2014/FreeSqlDemos/tree/master/Blazor/BootstrapBlazorApp
 
 [Blazor] BootstrapBlazor 的各种Demo
 https://github.com/densen2014/BootstrapBlazorDemo

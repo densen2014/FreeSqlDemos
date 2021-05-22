@@ -11,7 +11,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="BootstrapBlazor" Version="5.0.31-beta02" />
+        <PackageReference Include="BootstrapBlazor" Version="5.0.31" />
         <PackageReference Include="FreeSql.All" Version="2.5.100" />
     </ItemGroup>
 
@@ -21,7 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Extensions\DataServices\BootstrapBlazor.DataAcces.FreeSql\Densen.Extensions.Freesql.BootstrapBlazor.csproj" />
+      <ProjectReference Include="..\..\..\Extensions\DataServices\BootstrapBlazor.DataAcces.FreeSql\Densen.Extensions.Freesql.BootstrapBlazor.csproj" />
     </ItemGroup>
 
 </Project>

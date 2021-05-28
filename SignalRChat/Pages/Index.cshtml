@@ -1,0 +1,41 @@
+﻿@page
+<div class="container">
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-2">User</div>
+        <div class="col-4"><input type="text" id="userInput" value="@DateTime.Now.Ticks.ToString()" /></div>
+    </div>
+    <div class="row">
+        <div class="col-2">Message</div>
+        <div class="col-4"><input type="text" id="messageInput" value="@DateTime.Now.Second.ToString()" /></div>
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-6">
+            <input type="button" id="sendButton" value="Send Message" />
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <hr />
+    </div>
+</div>
+<div class="container"> 
+    <div class="row">
+        <div class="col-6">
+            <input type="button" id="loadButton" value="Load" />
+            <input type="button" id="resetButton" value="Reset" />
+        </div>
+        <div class="col-6">
+            <ul id="messagesList"></ul>
+        </div>
+    </div>
+    </div>
+    <script src="~/js/signalr/dist/browser/signalr.js"></script>
+    <script src="~/js/chat.js"></script>
+
+
+    @*创建名称以及消息文本的文本框和“提交”按钮。
+        使用 id="messagesList" 创建一个列表，用于显示从 SignalR 中心接收的消息。
+        包含对 SignalR 的脚本引用以及在下一步中创建的 chat.js 应用程序代码 。*@

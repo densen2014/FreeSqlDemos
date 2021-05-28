@@ -18,24 +18,27 @@ namespace FreeSqlDemos
             .UseMonitorCommand(cmd => Console.Write(cmd.CommandText))
             .Build();
 
+            var r = new Random();
+
             var ItemList = new List<Item>()
             {
-                new Item {  Text = "假装 First item", Description="This is an item description." },
+                new Item {  Text = "假装 First item" , Description="This is an item description." },
                 new Item {  Text = "的哥 Second item", Description="This is an item description." },
                 new Item { Text = "四风 Third item", Description="This is an item description." },
                 new Item {  Text = "加州 Fourth item", Description="This is an item description." },
                 new Item { Text = "阳光 Fifth item", Description="This is an item description." },
-                new Item {  Text = "孔雀 Sixth item", Description="This is an item description." }
+                new Item {  Text = "孔雀 Sixth item - "+ r.Next(11000).ToString(), Description="This is an item description." }
             };
 
-            if (fsql.Select<Item>().Count() == 0)
+            if (fsql.Select<Item>().Count() <100)
             {
                 fsql.Insert<Item>().AppendData(ItemList).ExecuteAffrows();
             }
             ItemList = fsql.Select<Item>().ToList();
 
 
-            Console.WriteLine("ItemList: " + ItemList.Count());
+            Console.WriteLine("\r\n\r\nItemListCount: " + ItemList.Count());
+            Console.WriteLine("\r\n\r\nLastItem: " + ItemList.Last().Text);
 
 
         }

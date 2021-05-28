@@ -27,6 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Blazor", "Blazor", "{4BE42A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BootstrapBlazorApp.Server", "Blazor\BootstrapBlazorApp\BootstrapBlazorApp1-freesql.Server\BootstrapBlazorApp.Server.csproj", "{00299BBB-9588-4A22-89E9-C0AD196E249D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalRChat", "SignalRChat\SignalRChat.csproj", "{74D99F7D-6AE2-47F0-8E57-6413DD6BB055}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -149,6 +151,18 @@ Global
 		{00299BBB-9588-4A22-89E9-C0AD196E249D}.Release|iPhone.Build.0 = Release|Any CPU
 		{00299BBB-9588-4A22-89E9-C0AD196E249D}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{00299BBB-9588-4A22-89E9-C0AD196E249D}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{74D99F7D-6AE2-47F0-8E57-6413DD6BB055}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74D99F7D-6AE2-47F0-8E57-6413DD6BB055}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74D99F7D-6AE2-47F0-8E57-6413DD6BB055}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{74D99F7D-6AE2-47F0-8E57-6413DD6BB055}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{74D99F7D-6AE2-47F0-8E57-6413DD6BB055}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{74D99F7D-6AE2-47F0-8E57-6413DD6BB055}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{74D99F7D-6AE2-47F0-8E57-6413DD6BB055}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74D99F7D-6AE2-47F0-8E57-6413DD6BB055}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74D99F7D-6AE2-47F0-8E57-6413DD6BB055}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{74D99F7D-6AE2-47F0-8E57-6413DD6BB055}.Release|iPhone.Build.0 = Release|Any CPU
+		{74D99F7D-6AE2-47F0-8E57-6413DD6BB055}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{74D99F7D-6AE2-47F0-8E57-6413DD6BB055}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

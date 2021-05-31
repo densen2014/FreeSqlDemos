@@ -78,6 +78,7 @@ namespace SignalRChat
 
 
 
+            services.AddCors();
             services.AddSingleton(fsql);
             services.AddRazorPages();
             //services.AddSwaggerGen(c =>
@@ -117,6 +118,12 @@ namespace SignalRChat
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseCors(options =>
+            {
+                options.AllowAnyOrigin()
+                      .AllowAnyMethod()
+                      .AllowAnyHeader();
+            });
 
             app.UseEndpoints(endpoints =>
             {

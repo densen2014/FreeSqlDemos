@@ -75,6 +75,7 @@ namespace WebApi
 
 
 
+            services.AddCors();
             services.AddSingleton(fsql);
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -103,6 +104,12 @@ namespace WebApi
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseCors(options =>
+            {
+                options.AllowAnyOrigin()
+                      .AllowAnyMethod()
+                      .AllowAnyHeader();
+            });
 
             app.UseEndpoints(endpoints =>
             {

@@ -117,6 +117,7 @@ namespace SignalRChat
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
             app.UseCors(options =>
             {

@@ -17,9 +17,9 @@ connection.on("ReceiveMessage", function (user, message, date, reset) {
 connection.on("ReceiveAllMessage", function (messages) {
     document.getElementById("messagesList").innerHTML = '';
     messages.forEach(item => {
-        console.log(item)
-        var msg = item.message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-        var encodedMsg = item.user + "[" + item.date + "]" + " says " + msg;
+        //console.log(item);
+        var msg = item.description.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        var encodedMsg = item.text + "[" + item.date + "]" + " says " + msg;
         var li = document.createElement("li");
         li.textContent = encodedMsg;
         document.getElementById("messagesList").appendChild(li);
@@ -60,6 +60,11 @@ document.getElementById("resetButton").addEventListener("click", function (event
     connection.invoke("ResetMessage").catch(function (err) {
         return console.error(err.toString());
     });
+    event.preventDefault();
+});
+
+document.getElementById("clearButton").addEventListener("click", function (event) {
+    document.getElementById("messagesList").innerHTML = '';
     event.preventDefault();
 });
 

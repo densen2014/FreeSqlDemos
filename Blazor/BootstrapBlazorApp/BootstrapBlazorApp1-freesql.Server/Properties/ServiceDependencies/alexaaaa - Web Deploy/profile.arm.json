@@ -2,26 +2,26 @@
   "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "metadata": {
-    "_dependencyType": "appService.windows"
+    "_dependencyType": "appService.linux"
   },
   "parameters": {
     "resourceGroupName": {
       "type": "string",
-      "defaultValue": "alex-test",
+      "defaultValue": "DefaultResourceGroup-EJP",
       "metadata": {
         "description": "Name of the resource group for the resource. It is recommended to put resources under same resource group for better tracking."
       }
     },
     "resourceGroupLocation": {
       "type": "string",
-      "defaultValue": "westeurope",
+      "defaultValue": "japaneast",
       "metadata": {
         "description": "Location of the resource group. Resource groups could have different location than resources, however by default we use API versions from latest hybrid profile which support all locations for resource types we support."
       }
     },
     "resourceName": {
       "type": "string",
-      "defaultValue": "alexssr88",
+      "defaultValue": "alexaaaa",
       "metadata": {
         "description": "Name of the main resource to be created by this template."
       }
@@ -78,31 +78,35 @@
                 "reserved": false,
                 "serverFarmId": "[variables('appServicePlan_ResourceId')]",
                 "siteConfig": {
-                  "metadata": [
-                    {
-                      "name": "CURRENT_STACK",
-                      "value": "dotnetcore"
-                    }
-                  ]
+                  "linuxFxVersion": "DOTNETCORE|2.1"
                 }
               },
               "identity": {
                 "type": "SystemAssigned"
-              }
+              },
+              "resources": [
+                {
+                  "name": "appsettings",
+                  "type": "config",
+                  "apiVersion": "2015-08-01",
+                  "dependsOn": [
+                    "[concat('Microsoft.Web/Sites/', parameters('resourceName'))]"
+                  ],
+                  "properties": {}
+                }
+              ]
             },
             {
               "location": "[parameters('resourceLocation')]",
               "name": "[variables('appServicePlan_name')]",
               "type": "Microsoft.Web/serverFarms",
-              "apiVersion": "2015-08-01",
-              "sku": {
-                "name": "S1",
-                "tier": "Standard",
-                "family": "S",
-                "size": "S1"
-              },
+              "apiVersion": "2015-02-01",
+              "kind": "linux",
               "properties": {
-                "name": "[variables('appServicePlan_name')]"
+                "name": "[variables('appServicePlan_name')]",
+                "sku": "Standard",
+                "workerSizeId": "0",
+                "reserved": true
               }
             }
           ]

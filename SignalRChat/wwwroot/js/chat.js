@@ -14,6 +14,18 @@ connection.on("ReceiveMessage", function (user, message, date, reset) {
     document.getElementById("messagesList").appendChild(li);
 });
 
+connection.on("ReceiveAllMessage", function (messages) {
+    document.getElementById("messagesList").innerHTML = '';
+    messages.forEach(item => {
+        //console.log(item);
+        var msg = item.description.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        var encodedMsg = item.text + "[" + item.date + "]" + " says " + msg;
+        var li = document.createElement("li");
+        li.textContent = encodedMsg;
+        document.getElementById("messagesList").appendChild(li);
+    });
+});
+
 connection.start().then(function () {
     document.getElementById("sendButton").disabled = false;
 }).catch(function (err) {
@@ -37,8 +49,27 @@ document.getElementById("loadButton").addEventListener("click", function (event)
     event.preventDefault();
 });
 
+document.getElementById("loadAllButton").addEventListener("click", function (event) {
+    connection.invoke("LoadAllMessage").catch(function (err) {
+        return console.error(err.toString());
+    });
+    event.preventDefault();
+});
+
 document.getElementById("resetButton").addEventListener("click", function (event) {
     connection.invoke("ResetMessage").catch(function (err) {
+        return console.error(err.toString());
+    });
+    event.preventDefault();
+});
+
+document.getElementById("clearButton").addEventListener("click", function (event) {
+    document.getElementById("messagesList").innerHTML = '';
+    event.preventDefault();
+});
+
+document.getElementById("intiButton").addEventListener("click", function (event) {
+    connection.invoke("InitMessage").catch(function (err) {
         return console.error(err.toString());
     });
     event.preventDefault();

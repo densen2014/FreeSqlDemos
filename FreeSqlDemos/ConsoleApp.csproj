@@ -6,7 +6,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FreeSql.Provider.Sqlite" Version="2.5.100" />
+    <None Remove="document.mdb" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="document.mdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FreeSql.Provider.MsAccess" Version="2.5.200" />
+    <PackageReference Include="FreeSql.Provider.Sqlite" Version="2.5.200" />
   </ItemGroup>
 
 </Project>

@@ -10,10 +10,10 @@ namespace FreeSqlDemos
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-
+            Console.WriteLine("Hello World!"); 
             var fsql = new FreeSql.FreeSqlBuilder()
             .UseConnectionString(FreeSql.DataType.Sqlite, "Data Source=document.db; Pooling=true;Min Pool Size=1")
+            //.UseConnectionString(FreeSql.DataType.MsAccess, "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=document.mdb")  //如果提示Microsoft.ACE.OLEDB.12.0未注册下载安装 https://download.microsoft.com/download/E/4/2/E4220252-5FAE-4F0A-B1B9-0B48B5FBCCF9/AccessDatabaseEngine_X64.exe
             .UseAutoSyncStructure(true) //自动同步实体结构【开发环境必备】
             .UseMonitorCommand(cmd => Console.Write(cmd.CommandText))
             .Build();

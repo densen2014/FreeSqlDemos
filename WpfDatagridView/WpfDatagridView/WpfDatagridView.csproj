@@ -24,7 +24,7 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
     <PackageReference Include="MvvmLightLibsStd10" Version="5.4.1.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" /> 
-    <PackageReference Include="FreeSql.Provider.Sqlite" Version="2.5.100" />
+    <PackageReference Include="FreeSql.Provider.Sqlite" Version="2.5.200" />
   </ItemGroup>
 
 </Project>

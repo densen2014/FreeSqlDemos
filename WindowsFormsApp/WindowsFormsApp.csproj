@@ -80,6 +80,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="FreeSql.Provider.PostgreSQL">
+      <Version>2.5.200</Version>
+    </PackageReference>
     <PackageReference Include="FreeSql.Provider.Sqlite">
       <Version>2.5.200</Version>
     </PackageReference>

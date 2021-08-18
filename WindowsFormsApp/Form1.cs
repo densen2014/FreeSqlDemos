@@ -1,4 +1,5 @@
 ﻿using FreeSql.DataAnnotations;
+using FreeSql.Internal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,19 @@ namespace WindowsFormsApp
            .UseAutoSyncStructure(true) //自动同步实体结构【开发环境必备】
            .UseMonitorCommand(cmd => Console.Write(cmd.CommandText))//使用azure的app service 应用服务 Linux版本, 好像不能使用  
            .Build();
+
+        #region PostgreSQL, 自己注释掉上面的sqlite方式
+
+        //static string connstr = $"Host=127.0.0.1;Port=5432;Username=u;Password=p; Database=demo;Pooling=true;Minimum Pool Size=1";
+
+        //static IFreeSql fsql = new FreeSql.FreeSqlBuilder()
+        //     .UseConnectionString(FreeSql.DataType.PostgreSQL, connstr)
+        //     .UseNameConvert(NameConvertType.ToLower)
+        //     .UseAutoSyncStructure(true) //自动同步实体结构【开发环境必备】
+        //     .UseMonitorCommand(cmd => Console.Write(cmd.CommandText))//使用azure的app service 应用服务 Linux版本, 好像不能使用  
+        //     .Build();
+
+        #endregion
 
         List<Item> ItemList = new List<Item>();
 

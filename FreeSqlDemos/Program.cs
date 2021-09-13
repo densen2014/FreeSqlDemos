@@ -47,7 +47,7 @@ namespace FreeSqlDemos
 
             var sql = fsql.Update<ItemDto>()
                             .SetSource(one)
-                            //.IgnoreColumns(a => a.Id)
+                            .IgnoreColumns(a => a.Id)
                             //.Where(a=>a.Idu==one.Idu)
                             .ToSql();
         }

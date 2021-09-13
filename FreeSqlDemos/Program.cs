@@ -42,15 +42,15 @@ namespace FreeSqlDemos
 
             var one = fsql.Select<Item>().Skip(2).ToOne(); 
 
-            //双主键
             var sql = fsql.Update<Item>()
                             .SetSource(one)
                             .IgnoreColumns(a => a.Id)
+                            //.Where(a=>a.Idu==one.Idu)
                             .ToSql();
         }
     }
 
-    [Index("Idu001", "Idu")]
+    [Index("Idu001", "Idu",true)]
     public class Item
     {
         [Column(IsIdentity = true)]

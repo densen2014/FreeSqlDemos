@@ -40,11 +40,14 @@ namespace FreeSqlDemos
             Console.WriteLine("\r\n\r\nItemListCount: " + ItemList.Count());
             Console.WriteLine("\r\n\r\nLastItem: " + ItemList.Last().Text);
 
-            var one = fsql.Select<Item>().Skip(2).ToOne(); 
 
-            var sql = fsql.Update<Item>()
+            //测试dto去掉Key
+            var one = fsql.Select<ItemDto>().Skip(2).ToOne();
+            one.Id = null;
+
+            var sql = fsql.Update<ItemDto>()
                             .SetSource(one)
-                            .IgnoreColumns(a => a.Id)
+                            //.IgnoreColumns(a => a.Id)
                             //.Where(a=>a.Idu==one.Idu)
                             .ToSql();
         }
@@ -53,7 +56,7 @@ namespace FreeSqlDemos
     [Index("Idu001", "Idu",true)]
     public class Item
     {
-        [Column(IsIdentity = true)]
+        [Column(IsIdentity = true, IsPrimary = true)]
         [DisplayName("序号")]
         public int Id { get; set; }
 
@@ -71,8 +74,7 @@ namespace FreeSqlDemos
     [Table (DisableSyncStructure =true,Name = "Item")]
     public class ItemDto:Item
     {
-        [Column(IsIdentity = false)]
-        new public int Id { get; set; }
+        new public int? Id { get; set; }
 
     }
 }

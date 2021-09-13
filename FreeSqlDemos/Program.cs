@@ -22,12 +22,12 @@ namespace FreeSqlDemos
 
             var ItemList = new List<Item>()
             {
-                new Item {  Text = "假装 First item" , Description="This is an item description." },
-                new Item {  Text = "的哥 Second item", Description="This is an item description." },
-                new Item { Text = "四风 Third item", Description="This is an item description." },
-                new Item {  Text = "加州 Fourth item", Description="This is an item description." },
-                new Item { Text = "阳光 Fifth item", Description="This is an item description." },
-                new Item {  Text = "孔雀 Sixth item - "+ r.Next(11000).ToString(), Description="This is an item description." }
+                new Item {  Text = "假装 First item" , Description="This is an item description." ,Idu=Guid.NewGuid()},
+                new Item {  Text = "的哥 Second item", Description="This is an item description." ,Idu=Guid.NewGuid()},
+                new Item { Text = "四风 Third item", Description="This is an item description." ,Idu=Guid.NewGuid()},
+                new Item {  Text = "加州 Fourth item", Description="This is an item description." ,Idu=Guid.NewGuid()},
+                new Item { Text = "阳光 Fifth item", Description="This is an item description." ,Idu=Guid.NewGuid()},
+                new Item {  Text = "孔雀 Sixth item - "+ r.Next(11000).ToString(), Description="This is an item description." ,Idu=Guid.NewGuid()}
             };
 
             if (fsql.Select<Item>().Count() <100)
@@ -40,11 +40,17 @@ namespace FreeSqlDemos
             Console.WriteLine("\r\n\r\nItemListCount: " + ItemList.Count());
             Console.WriteLine("\r\n\r\nLastItem: " + ItemList.Last().Text);
 
+            var one = fsql.Select<Item>().Skip(2).ToOne(); 
 
+            //双主键
+            var sql = fsql.Update<Item>()
+                            .SetSource(one)
+                            .IgnoreColumns(a => a.Id)
+                            .ToSql();
         }
     }
 
-
+    [Index("Idu001", "Idu")]
     public class Item
     {
         [Column(IsIdentity = true)]
@@ -56,6 +62,17 @@ namespace FreeSqlDemos
 
         [DisplayName("描述")]
         public string Description { get; set; }
+
+        [Column(IsPrimary = true)]
+        [DisplayName("序号U")]
+        public Guid Idu { get; set; }
     }
 
+    [Table (DisableSyncStructure =true,Name = "Item")]
+    public class ItemDto:Item
+    {
+        [Column(IsIdentity = false)]
+        new public int Id { get; set; }
+
+    }
 }

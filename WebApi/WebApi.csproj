@@ -16,8 +16,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.5" />
-    <PackageReference Include="FreeSql.Provider.Sqlite" Version="2.5.200" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.1" />
+    <PackageReference Include="FreeSql.Provider.Sqlite" Version="2.6.100" />
   </ItemGroup>
 
 </Project>

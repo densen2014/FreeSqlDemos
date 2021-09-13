@@ -16,8 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FreeSql.Provider.MsAccess" Version="2.5.200" />
-    <PackageReference Include="FreeSql.Provider.Sqlite" Version="2.5.200" />
+    <PackageReference Include="FreeSql.Provider.MsAccess" Version="2.6.100" />
+    <PackageReference Include="FreeSql.Provider.Sqlite" Version="2.6.100" />
   </ItemGroup>
 
 </Project>

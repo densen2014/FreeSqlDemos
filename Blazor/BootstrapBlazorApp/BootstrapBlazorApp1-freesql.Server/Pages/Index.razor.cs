@@ -34,9 +34,9 @@ namespace BootstrapBlazorApp.Server.Pages
         {
              return  Task.FromResult(new Item() { Id = 0 });
         }
-        protected async Task<bool> OnSaveAsync(Item item)
+        protected async Task<bool> OnSaveAsync(Item item,ItemChangedType itemChangedType)
         {
-            await dataService.UpdateItemAsync(item);
+            await dataService.UpdateItemAsync(item, itemChangedType);
             return true;
         }
 

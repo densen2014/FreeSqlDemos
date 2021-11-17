@@ -35,28 +35,6 @@ namespace BootstrapBlazorApp.Server.Shared
                 new MenuItem() { Text = "日志设置", Icon = "fa fa-fw fa-database", Url = "#" }
             };
 
-            ret[4].AddItem(new MenuItem() { Text = "网站设置", Icon = "fa fa-fw fa-fa" });
-            ret[4].AddItem(new MenuItem() { Text = "任务设置", Icon = "fa fa-fw fa-tasks" });
-            ret[4].AddItem(new MenuItem() { Text = "用户设置", Icon = "fa fa-fw fa-user" });
-            ret[4].AddItem(new MenuItem() { Text = "菜单设置", Icon = "fa fa-fw fa-dashboard" });
-            ret[4].AddItem(new MenuItem() { Text = "角色设置", Icon = "fa fa-fw fa-sitemap" });
-            ret[4].AddItem(new MenuItem() { Text = "访问日志", Icon = "fa fa-fw fa-bars" });
-            ret[4].AddItem(new MenuItem() { Text = "登录日志", Icon = "fa fa-fw fa-user-circle-o" });
-            ret[4].AddItem(new MenuItem() { Text = "操作日志", Icon = "fa fa-fw fa-edit" });
-
-            ret[5].AddItem(new MenuItem() { Text = "用户设置", Icon = "fa fa-fw fa-user" });
-            ret[5].AddItem(new MenuItem() { Text = "菜单设置", Icon = "fa fa-fw fa-dashboard" });
-            ret[5].AddItem(new MenuItem() { Text = "角色设置", Icon = "fa fa-fw fa-sitemap" });
-            ret[5].AddItem(new MenuItem() { Text = "访问日志", Icon = "fa fa-fw fa-bars" });
-            ret[5].AddItem(new MenuItem() { Text = "登录日志", Icon = "fa fa-fw fa-user-circle-o" });
-            ret[5].AddItem(new MenuItem() { Text = "操作日志", Icon = "fa fa-fw fa-edit" });
-
-            ret[6].AddItem(new MenuItem() { Text = "用户设置", Icon = "fa fa-fw fa-user" });
-            ret[6].AddItem(new MenuItem() { Text = "菜单设置", Icon = "fa fa-fw fa-dashboard" });
-            ret[6].AddItem(new MenuItem() { Text = "角色设置", Icon = "fa fa-fw fa-sitemap" });
-            ret[6].AddItem(new MenuItem() { Text = "访问日志", Icon = "fa fa-fw fa-bars" });
-            ret[6].AddItem(new MenuItem() { Text = "登录日志", Icon = "fa fa-fw fa-user-circle-o" });
-            ret[6].AddItem(new MenuItem() { Text = "操作日志", Icon = "fa fa-fw fa-edit" });
 
             return ret;
         }

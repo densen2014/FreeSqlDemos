@@ -1,4 +1,5 @@
-﻿using BootstrapBlazorApp1_freesql.Services;
+﻿using BootstrapBlazor.Components;
+using BootstrapBlazorApp1_freesql.Services;
 using BootstrapBlazorServerApp.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -61,7 +62,7 @@ namespace BootstrapBlazorApp.Server
             {
                 app.UseExceptionHandler("/Error");
             }
-
+            app.ApplicationServices.RegisterProvider();
             app.UseStaticFiles();
 
             app.UseRouting();

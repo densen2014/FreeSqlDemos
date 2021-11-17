@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using BootstrapBlazor.Components;
 using BootstrapBlazorApp1_freesql.Models;
 
 namespace BootstrapBlazorApp1_freesql.Services
@@ -56,7 +57,7 @@ namespace BootstrapBlazorApp1_freesql.Services
                 fsql = new FreeSql.FreeSqlBuilder()
                         .UseConnectionString(FreeSql.DataType.Sqlite, "Data Source=document.db; Pooling=true;Min Pool Size=1")
                         .UseAutoSyncStructure(true) //自动同步实体结构【开发环境必备】
-                        .UseMonitorCommand(cmd => Console.Write(cmd.CommandText))
+                        .UseMonitorCommand(cmd => System.Console.Write(cmd.CommandText))
                         .Build();
 
                 #endregion
@@ -95,7 +96,7 @@ namespace BootstrapBlazorApp1_freesql.Services
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> UpdateItemAsync(Item item)
+        public async Task<bool> UpdateItemAsync(Item item, ItemChangedType itemChangedType)
         {
  
             if (item.Id==0)

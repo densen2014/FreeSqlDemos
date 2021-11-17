@@ -48,7 +48,7 @@ namespace Densen.DataAcces.FreeSql
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public override async Task<bool> SaveAsync(TModel model)
+        public override async Task<bool> SaveAsync(TModel model, ItemChangedType changedType)
         {
             await _db.GetRepository<TModel>().InsertOrUpdateAsync(model);
             TotalCount = null;

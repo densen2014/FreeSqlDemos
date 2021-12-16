@@ -28,5 +28,20 @@
             <param name="name"></param>
             <returns></returns>
         </member>
+        <member name="M:WebApi.Controllers.testController.Del(System.String)">
+            <summary>
+            delete或者GET的Del方法删除一条数据
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.testController.Modify(System.Int32,System.String)">
+            <summary>
+            Patch或者GET的Modify方法编辑一条数据
+            </summary>
+            <param name="Id"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

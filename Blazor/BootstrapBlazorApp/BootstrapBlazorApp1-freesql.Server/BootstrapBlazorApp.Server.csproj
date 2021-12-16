@@ -11,7 +11,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="BootstrapBlazor" Version="6.0.3" />
+        <PackageReference Include="BootstrapBlazor" Version="6.1.0" />
         <PackageReference Include="FreeSql.All" Version="2.6.100" />
     </ItemGroup>
 

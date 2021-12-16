@@ -3,8 +3,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using static WebApi.Startup;
+using System.Threading.Tasks; 
 
 namespace WebApi.Controllers
 {
@@ -58,5 +57,34 @@ namespace WebApi.Controllers
             var ItemList = _fsql.Select<Item>().Where (a=>a.Id==id).ToList();
             return ItemList;
         }
+
+        /// <summary>
+        /// delete或者GET的Del方法删除一条数据
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        [HttpGet("Del")]
+        [HttpDelete]
+        public string Del(string name)
+        {
+            var rows = _fsql.Delete<Item>().Where(a=>a.Text == name).ExecuteAffrows();
+            return $"编辑{rows}行";
+        }
+
+
+        /// <summary>
+        /// Patch或者GET的Modify方法编辑一条数据
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        [HttpGet("Modify")]
+        [HttpPatch]
+        public string Modify(int Id,string name)
+        {
+            var rows = _fsql.Update<Item>().Set(a=>a.Text == name).Where(a=>a.Id == Id).ExecuteAffrows();
+            return $"编辑{rows}行";
+        }
+
     }
 }

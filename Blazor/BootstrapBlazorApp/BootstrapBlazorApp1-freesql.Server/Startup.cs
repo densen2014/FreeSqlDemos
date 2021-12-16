@@ -62,7 +62,6 @@ namespace BootstrapBlazorApp.Server
             {
                 app.UseExceptionHandler("/Error");
             }
-            app.ApplicationServices.RegisterProvider();
             app.UseStaticFiles();
 
             app.UseRouting();

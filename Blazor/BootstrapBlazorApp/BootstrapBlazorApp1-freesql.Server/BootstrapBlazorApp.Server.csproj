@@ -4,7 +4,8 @@
         <TargetFramework>net6.0</TargetFramework>
         <AssemblyName>BootstrapBlazorApp.Server</AssemblyName>
         <UserSecretsId>3934cf9f-d63b-4045-b91e-85c21e8016a2</UserSecretsId>
-    </PropertyGroup>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
 
     <ItemGroup>
         <SupportedPlatform Include="browser" />

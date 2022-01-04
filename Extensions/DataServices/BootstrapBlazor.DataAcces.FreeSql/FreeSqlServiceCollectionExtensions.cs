@@ -30,6 +30,7 @@ namespace Microsoft.Extensions.DependencyInjection
                 var builder = new FreeSqlBuilder();
                 optionsAction(builder);
                 var instance = builder.Build();
+                instance.UseJsonMap();
                 configureAction?.Invoke(instance);
                 return instance;
             });

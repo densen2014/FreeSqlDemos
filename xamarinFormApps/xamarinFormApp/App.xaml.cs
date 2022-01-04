@@ -51,21 +51,35 @@ namespace xamarinFormApp
 
                 #region Sqlite需要反射,明天有时间再补充代码
 
-                //                fsql = new FreeSql.FreeSqlBuilder()
-                //.UseConnectionString(FreeSql.DataType.Sqlite, "Data Source=document.db; Pooling=true;Min Pool Size=1")
-                //.UseAutoSyncStructure(true) //自动同步实体结构【开发环境必备】
-                //.UseMonitorCommand(cmd => Console.Write(cmd.CommandText))
-                //.Build();
+
+
+                if (Device.RuntimePlatform == Device.iOS || Device.RuntimePlatform == Device.Android)
+                {
+                    fsql = new FreeSql.FreeSqlBuilder()
+                        .UseConnectionFactory(FreeSql.DataType.Sqlite, () => DependencyService.Get<ISQLite>().GetConnectionSqlite("document"), typeof(FreeSql.Sqlite.SqliteProvider<>))
+                        .UseAutoSyncStructure(true)
+                        //.UseMonitorCommand(cmd => Console.WriteLine(cmd.CommandText))
+                        .UseNoneCommandParameter(true)
+                        .Build();
+                }
+                else
+                {
+                    fsql = new FreeSql.FreeSqlBuilder()
+                            .UseConnectionString(FreeSql.DataType.Sqlite, "Data Source=document.db; Pooling=true;Min Pool Size=1")
+                            .UseAutoSyncStructure(true) //自动同步实体结构【开发环境必备】
+                            .UseMonitorCommand(cmd => Console.Write(cmd.CommandText))
+                            .Build();
+                }
 
                 #endregion
 
                 #region mysql使用 reeSql.Provider.MySqlConnector , debug和release都设置为不链接即可
 
-                fsql = new FreeSql.FreeSqlBuilder()
-.UseConnectionString(FreeSql.DataType.MySql, "Data Source=192.168.1.100;Port=3306;User ID=root;Password=a123456; Initial Catalog=test;Charset=utf8; SslMode=none;Min pool size=1")
-.UseAutoSyncStructure(true) //自动同步实体结构【开发环境必备】
-.UseMonitorCommand(cmd => Console.Write(cmd.CommandText))
-.Build();
+                //fsql = new FreeSql.FreeSqlBuilder()
+                //        .UseConnectionString(FreeSql.DataType.MySql, "Data Source=192.168.1.100;Port=3306;User ID=root;Password=a123456; Initial Catalog=test;Charset=utf8; SslMode=none;Min pool size=1")
+                //        .UseAutoSyncStructure(true) //自动同步实体结构【开发环境必备】
+                //        .UseMonitorCommand(cmd => Console.Write(cmd.CommandText))
+                //        .Build();
                 #endregion
 
                 fsql.CodeFirst.SyncStructure<Item>();

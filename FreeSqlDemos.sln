@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30907.101
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "FreeSqlDemos\ConsoleApp.csproj", "{ECD94386-5A1D-4FBE-9804-497138FA2826}"
 EndProject
@@ -126,6 +126,7 @@ Global
 		{F4C814E7-FCDC-4596-854D-8FA5CD992C67}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
 		{F4C814E7-FCDC-4596-854D-8FA5CD992C67}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{F4C814E7-FCDC-4596-854D-8FA5CD992C67}.Debug|iPhone.Build.0 = Debug|iPhone
+		{F4C814E7-FCDC-4596-854D-8FA5CD992C67}.Debug|iPhone.Deploy.0 = Debug|iPhone
 		{F4C814E7-FCDC-4596-854D-8FA5CD992C67}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
 		{F4C814E7-FCDC-4596-854D-8FA5CD992C67}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
 		{F4C814E7-FCDC-4596-854D-8FA5CD992C67}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator

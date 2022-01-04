@@ -1,15 +1,14 @@
 using System;
-using xamarinFormApp.Services;
-using Xamarin.Forms;
-using System.IO; 
-using Mono.Data.Sqlite;
 using System.Data.Common;
+using System.IO;
+using Xamarin.Forms;
+using xamarinFormApp.Services;
 
-[assembly: Dependency (typeof (SQLite_iOS))]
+[assembly: Dependency(typeof(SQLite_iOS))]
 
 namespace xamarinFormApp.Services
 {
-	public class SQLite_iOS : ISQLite
+    public class SQLite_iOS : ISQLite
 	{
 		public SQLite_iOS ()
 		{

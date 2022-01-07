@@ -340,28 +340,30 @@ namespace Densen.DataAcces.FreeSql
             {
                 foreach (var item in option.Filters)
                 {
-                    var filter = item.GetFilterConditions().First();
-                    var filterOperator = DynamicFilterOperator.Contains;
-
-                    filterOperator = filter.FilterAction switch
+                    foreach (var filter in item.GetFilterConditions())
                     {
-                        FilterAction.Equal => DynamicFilterOperator.Equal,
-                        FilterAction.NotEqual => DynamicFilterOperator.NotEqual,
-                        FilterAction.Contains => DynamicFilterOperator.Contains,
-                        FilterAction.NotContains => DynamicFilterOperator.NotContains,
-                        FilterAction.GreaterThan => DynamicFilterOperator.GreaterThan,
-                        FilterAction.GreaterThanOrEqual => DynamicFilterOperator.GreaterThanOrEqual,
-                        FilterAction.LessThan => DynamicFilterOperator.LessThan,
-                        FilterAction.LessThanOrEqual => DynamicFilterOperator.LessThanOrEqual,
-                        _ => throw new System.NotSupportedException()
-                    };
+                        var filterOperator = DynamicFilterOperator.Contains;
 
-                    filters.Add(new DynamicFilterInfo()
-                    {
-                        Field = filter.FieldKey,
-                        Operator = filterOperator,
-                        Value = filter.FieldValue,
-                    });
+                        filterOperator = filter.FilterAction switch
+                        {
+                            FilterAction.Equal => DynamicFilterOperator.Equal,
+                            FilterAction.NotEqual => DynamicFilterOperator.NotEqual,
+                            FilterAction.Contains => DynamicFilterOperator.Contains,
+                            FilterAction.NotContains => DynamicFilterOperator.NotContains,
+                            FilterAction.GreaterThan => DynamicFilterOperator.GreaterThan,
+                            FilterAction.GreaterThanOrEqual => DynamicFilterOperator.GreaterThanOrEqual,
+                            FilterAction.LessThan => DynamicFilterOperator.LessThan,
+                            FilterAction.LessThanOrEqual => DynamicFilterOperator.LessThanOrEqual,
+                            _ => throw new System.NotSupportedException()
+                        };
+
+                        filters.Add(new DynamicFilterInfo()
+                        {
+                            Field = filter.FieldKey,
+                            Operator = filterOperator,
+                            Value = filter.FieldValue,
+                        });
+                    }
                 }
             }
 

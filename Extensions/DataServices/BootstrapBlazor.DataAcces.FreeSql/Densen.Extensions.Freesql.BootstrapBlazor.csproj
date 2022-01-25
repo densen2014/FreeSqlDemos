@@ -4,7 +4,7 @@
 		<TargetFramework>net6.0</TargetFramework>
 		<IsPackable>true</IsPackable>
 		<PackageIcon>logo.png</PackageIcon>
-		<Version>6.0.3</Version>
+		<Version>6.1.0</Version>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<Company>Densen Informatica</Company>
 		<Authors>Alex Chow</Authors>

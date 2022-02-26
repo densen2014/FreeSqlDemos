@@ -62,7 +62,8 @@ namespace UWP1
             }
             ItemList = fsql.Select<ItemUWP>().ToList();
             ListView Fruits = new ListView();
-            Fruits.ItemsSource = ItemList.Select(a => a.Text).ToList();
+            //Fruits.ItemsSource = ItemList.Select(a => a.Text).ToList();
+            Fruits.ItemsSource = ItemList;
             FruitsPanel.Children.Add(Fruits);
         }
 
@@ -82,6 +83,8 @@ namespace UWP1
             [Column(IsPrimary = true)]
             [DisplayName("序号U")]
             public Guid Idu { get; set; }
+
+            public override string ToString() => $"[{Id}] {Text} ({Description})";
         }
 
         [Table(DisableSyncStructure = true, Name = "Item")]

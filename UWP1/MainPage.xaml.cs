@@ -34,12 +34,14 @@ namespace UWP1
             string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "sqliteSample.db");
             
             SQLiteConnection _database = new SQLiteConnection($"Data Source={dbpath}");
-
-
+            string connstrMssql = $"Data Source=xxxx;Initial Catalog=demo;Persist Security Info=True;User ID=sa;Password=xxxx;Pooling=true;Max Pool Size=2";
+            string connstrMysql = $"data source=xxxx;port=3306;user id=testdb;password=xxxx;initial catalog=testdb;charset=utf8;sslmode=none;max pool size=2";
             var fsql = new FreeSql.FreeSqlBuilder()
                       .UseConnectionFactory(FreeSql.DataType.Sqlite, () => _database, typeof(FreeSql.Sqlite.SqliteProvider<>))
-                      //.UseConnectionString(FreeSql.DataType.Sqlite, "Data Source=document.db; Pooling=true;Min Pool Size=1") //UWP需要反射SqliteProvider
+                      //.UseConnectionString(FreeSql.DataType.Sqlite, "Data Source=document.db; Pooling=true;Min Pool Size=1") //UWP需要自定义SqliteProvider
                       //.UseConnectionString(FreeSql.DataType.MsAccess, "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=document.mdb")  //如果提示Microsoft.ACE.OLEDB.12.0未注册下载安装 https://download.microsoft.com/download/E/4/2/E4220252-5FAE-4F0A-B1B9-0B48B5FBCCF9/AccessDatabaseEngine_X64.exe
+                      //.UseConnectionString(FreeSql.DataType.SqlServer, connstrMssql)
+                      //.UseConnectionString(FreeSql.DataType.MySql, connstrMysql)
                       .UseAutoSyncStructure(true) //自动同步实体结构【开发环境必备】
                       .UseMonitorCommand(cmd => Console.Write(cmd.CommandText))
                       .Build();

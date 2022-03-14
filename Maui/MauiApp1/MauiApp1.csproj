@@ -58,6 +58,10 @@
 		<PackageReference Include="FreeSql.Provider.Sqlite" Version="3.0.100" />
 		<PackageReference Include="Microsoft.Data.Sqlite" Version="6.0.3" />
 	</ItemGroup>
+
+	<ItemGroup Condition="'$(Configuration)' == 'DebugFsql'">
+	  <ProjectReference Include="..\..\..\FreeSql\Providers\FreeSql.Provider.Sqlite\FreeSql.Provider.Sqlite.csproj" />
+	</ItemGroup>
 	
 	<ItemGroup>
 	  <ProjectReference Include="..\..\LibraryShared\LibraryShared.csproj" />

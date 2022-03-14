@@ -13,8 +13,11 @@ namespace MauiBlazorApp.Pages
 {
     public partial class Index
     {
-        void init()
+        List<Item> ItemList=new List<Item>();
+
+        protected override void OnInitialized()
         {
+ 
 #if WINDOWS
             string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "sqliteSample.db");
 #else
@@ -35,7 +38,7 @@ namespace MauiBlazorApp.Pages
                 var itemList = Item.GenerateDatas();
                 fsql.Insert<Item>().AppendData(itemList).ExecuteAffrows();
             }
-            var ItemList = fsql.Select<Item>().ToList();
+            ItemList = fsql.Select<Item>().ToList();
 
 
             Console.WriteLine("\r\n\r\nItemListCount: " + ItemList.Count());

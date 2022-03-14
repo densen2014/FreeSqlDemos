@@ -49,9 +49,7 @@ namespace xamarinFormApp
 
                 #endregion
 
-                #region Sqlite需要反射,明天有时间再补充代码
-
-
+                #region Sqlite需要每平台引用Mono.Data.Sqlite,然后反射各自平台Mono.Data.Sqlite.SqliteConnection
 
                 if (Device.RuntimePlatform == Device.iOS || Device.RuntimePlatform == Device.Android)
                 {

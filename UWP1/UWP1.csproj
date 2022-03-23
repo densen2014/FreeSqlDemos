@@ -151,13 +151,13 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FreeSql.Provider.MySqlConnector">
-      <Version>3.0.100</Version>
+      <Version>3.2.100</Version>
     </PackageReference>
     <PackageReference Include="FreeSql.Provider.Sqlite">
-      <Version>3.0.100</Version>
+      <Version>3.2.100</Version>
     </PackageReference>
     <PackageReference Include="FreeSql.Provider.SqlServerForSystem">
-      <Version>3.0.100</Version>
+      <Version>3.2.100</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.13</Version>

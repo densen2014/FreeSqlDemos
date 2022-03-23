@@ -11,7 +11,7 @@ namespace FreeSqlDemos
     {
         // arm,树莓派使用freesql说明
         // 1.添加包
-        //<PackageReference Include="FreeSql.Provider.Sqlite" Version="3.0.100" />
+        //<PackageReference Include="FreeSql.Provider.Sqlite" Version="3.2.100" />
         //<PackageReference Include = "Microsoft.Data.Sqlite" Version="6.0.3" />
 
         // 2.代码

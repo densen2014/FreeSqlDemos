@@ -1,6 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiApp1.MainPage"
+             x:Class="MauiApp2.MainPage"
              BackgroundColor="{DynamicResource SecondaryColor}">
 
     <ScrollView>
@@ -8,14 +9,14 @@
               Padding="{OnPlatform iOS='30,60,30,30', Default='30'}">
 
             <Label 
-                Text="Hello, World!"
+                Text="Hello, MAUI and FreeSql!"
                 Grid.Row="0"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="30"
                 HorizontalOptions="Center" />
 
             <Label 
-                Text="Welcome to Multi FreeSql"
+                Text="Welcome to new world"
                 Grid.Row="1"
                 SemanticProperties.HeadingLevel="Level1"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I"
@@ -31,11 +32,18 @@
                 HorizontalOptions="Center" />
 
             <Button 
-                Text="Click me"
+                Text="Add 1"
                 FontAttributes="Bold"
                 Grid.Row="3"
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />
+            <Button 
+                Text="Delete 1"
+                FontAttributes="Bold"
+                Grid.Row="3"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnDelete1Clicked"
                 HorizontalOptions="Center" />
 
             <Image Grid.Row="4"
@@ -50,5 +58,4 @@
 
         </Grid>
     </ScrollView>
-    
 </ContentPage>

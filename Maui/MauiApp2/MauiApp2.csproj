@@ -4,19 +4,21 @@
 		<TargetFrameworks>net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
 		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows')) and '$(MSBuildRuntimeType)' == 'Full'">$(TargetFrameworks);net6.0-windows10.0.19041</TargetFrameworks>
 		<OutputType>Exe</OutputType>
-		<RootNamespace>MauiApp1</RootNamespace>
+		<RootNamespace>MauiApp2</RootNamespace>
 		<UseMaui>true</UseMaui>
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
 
 		<!-- Display name -->
-		<ApplicationTitle>MauiApp1</ApplicationTitle>
+		<ApplicationTitle>MauiApp2</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.mauiapp1</ApplicationId>
+		<ApplicationId>com.companyname.mauiapp2</ApplicationId>
+		<ApplicationId Condition="$(TargetFramework.Contains('-windows'))">35B444B2-6520-4F77-B77E-A02D92EFABBC</ApplicationId>
 
 		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 
 		<!-- Required for C# Hot Reload -->
@@ -36,10 +38,11 @@
 		<MauiIcon Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" Color="#512BD4" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\appiconfg.svg" Color="#512BD4" />
+		<MauiSplashScreen Include="Resources\appiconfg.svg" Color="#512BD4" BaseSize="128,128" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
+		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
@@ -50,22 +53,8 @@
 
 	<ItemGroup Condition="$(TargetFramework.Contains('-windows'))">
 		<!-- Required - WinUI does not yet have buildTransitive for everything -->
-		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0" />
-		<PackageReference Include="Microsoft.Graphics.Win2D" Version="1.0.0.30" />
-	</ItemGroup>
-	
-	<ItemGroup>
-		<PackageReference Include="FreeSql.Provider.Sqlite" Version="3.2.100" />
-		<PackageReference Include="Microsoft.Data.Sqlite" Version="6.0.3" />
 		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.1" />
-	</ItemGroup>
-
-	<ItemGroup Condition="'$(Configuration)' == 'DebugFsql'">
-	  <ProjectReference Include="..\..\..\FreeSql\Providers\FreeSql.Provider.Sqlite\FreeSql.Provider.Sqlite.csproj" />
-	</ItemGroup>
-	
-	<ItemGroup>
-	  <ProjectReference Include="..\..\LibraryShared\LibraryShared.csproj" />
+		<PackageReference Include="Microsoft.Graphics.Win2D" Version="1.0.0.30" />
 	</ItemGroup>
 
 	<PropertyGroup Condition="$(TargetFramework.Contains('-windows'))">
@@ -77,5 +66,13 @@
 	  <CodesignKey>Apple Development: zhou chuanglin %28W9D8HB5VZK%29</CodesignKey>
 	  <CodesignProvision>VS: WildCard Development</CodesignProvision>
 	</PropertyGroup>
+
+	<ItemGroup Condition="'$(Configuration)' == 'DebugFsql'">
+		<!--<ProjectReference Include="..\..\..\FreeSql\Providers\FreeSql.Provider.Sqlite\FreeSql.Provider.Sqlite.csproj" />-->
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\LibraryShared\LibraryShared.csproj" />
+	</ItemGroup>
 	
 </Project>

@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MauiApp2"
+             x:Class="MauiApp2.MainPage"
+             BackgroundColor="{DynamicResource SecondaryColor}"
+             Title="{Binding Title2}"
+             >
+    <ContentPage.BindingContext>
+        <local:MainViewModel />
+    </ContentPage.BindingContext>
+    
+    <ScrollView>
+        <Grid RowSpacing="25" RowDefinitions="Auto,Auto,Auto,Auto,*,Auto"  
+              Padding="{OnPlatform iOS='30,60,30,30', Default='30'}">
+
+            <Label 
+                Text="Hello, MAUI with freeSql!"
+                Grid.Row="0"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="30"
+                HorizontalOptions="Center" />
+
+            <Label 
+                Text="Welcome to new world"
+                Grid.Row="1"
+                SemanticProperties.HeadingLevel="Level1"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                FontSize="12"
+                HorizontalOptions="Center" />
+
+            <Label 
+                Grid.Row="2"
+                FontSize="12"
+                FontAttributes="Bold"
+                x:Name="CounterLabel"
+                Text="{Binding CounterLabel}"
+                HorizontalOptions="Center" />
+            <StackLayout Grid.Row="3" Orientation="Horizontal">
+                   
+            <Button 
+                Text="Modify"
+                FontAttributes="Bold" 
+                 SemanticProperties.Hint="Counts the number of times you click"
+                Command="{Binding ModifyCommand}"
+                HorizontalOptions="Center" />
+                
+             <Button 
+                Text="Add"
+                FontAttributes="Bold" 
+                SemanticProperties.Hint="Counts the number of times you click"
+                Command="{Binding AddCommand}"
+                HorizontalOptions="Center" />
+            
+            <Button 
+                Text="Del"
+                FontAttributes="Bold" 
+                 SemanticProperties.Hint="Counts the number of times you click"
+                Command="{Binding DeleteCommand}"
+                HorizontalOptions="Center" />
+                
+            <Button 
+                Text="Refresh"
+                FontAttributes="Bold" 
+                 SemanticProperties.Hint="Counts the number of times you click"
+                Command="{Binding RefreshCommand}"
+                HorizontalOptions="Center" />
+                
+            <Button 
+                Text="Select"
+                FontAttributes="Bold" 
+                 SemanticProperties.Hint="Counts the number of times you click"
+                Command="{Binding SelectOneCommand}"
+                HorizontalOptions="Center" />
+                
+            </StackLayout> 
+
+            <StackLayout  Grid.Row="4" 
+                          HeightRequest="200" 
+                          x:Name="FruitsPanel" 
+                          BackgroundColor="{DynamicResource PrimaryColor}" 
+                          >
+                <ListView x:Name="Fruits"  HeightRequest="400"
+                          SelectedItem="{Binding ItemSelected}"
+                          ItemSelected="Fruits_ItemSelected"
+                          SelectionMode="Single"
+                          BackgroundColor="{DynamicResource TextBackgroundColor}" 
+                          ItemsSource = "{Binding ItemList}"
+                          ></ListView>
+            </StackLayout>
+
+            <StackLayout Grid.Row="5"  Padding="10, 0">
+                <Slider x:Name="slider"
+                Maximum="360"
+                VerticalOptions="Center" />
+                <Label Text="Binding"
+               FontSize="80"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               BindingContext="{x:Reference Name=slider}"
+               Rotation="{Binding Path=Value}" />
+
+            </StackLayout>
+
+        </Grid>
+    </ScrollView>
+</ContentPage>

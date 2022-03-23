@@ -8,6 +8,8 @@
 
             <Color x:Key="PrimaryColor">#512bdf</Color>
             <Color x:Key="SecondaryColor">White</Color>
+            <Color x:Key="TextColor">Black</Color>
+            <Color x:Key="TextBackgroundColor">Beige</Color>
 
             <Style TargetType="Label">
                 <Setter Property="TextColor" Value="{DynamicResource PrimaryColor}" />

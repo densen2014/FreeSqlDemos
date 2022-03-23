@@ -53,6 +53,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiApp2", "Maui\MauiApp2\M
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiBlazorApp2", "Maui\MauiBlazorApp2\MauiBlazorApp2.csproj", "{1C479393-0ABD-4ABD-90D2-5699F7FE90E0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项", "解决方案项", "{CF3FFBBC-E874-451E-95DB-D67361E13182}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

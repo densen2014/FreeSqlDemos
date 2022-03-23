@@ -1,4 +1,4 @@
-# FreeSql的各种工程demo
+# FreeSql的各种工程demo [GitHub](https://github.com/densen2014/FreeSqlDemos) | [Gitee](https://gitee.com/alexchow/FreeSqlDemos)
 
 console,winforms nf461,vb,wpf,webapi,workerSevice,signalIR
 
@@ -6,13 +6,37 @@ xamarinForm app: ios,android,wpf
 
 Blazor,ARM_Console
 
-Maui: Android, iOS , MacCatalyst , Windows (UWP)
+**vs2022 preview**
 
-MauiBlazor: Android, iOS , MacCatalyst , Windows (UWP)
+Maui: Android, iOS , MacCatalyst , Windows (UWP) 
 
+MauiBlazor: Android, iOS , MacCatalyst , Windows (UWP) 
 
+BlazorHybrid: BlazorWinForms , BlazorWpf
 
-https://github.com/densen2014/FreeSqlDemos
+**maui_andrid**
+
+![maui_andrid](https://user-images.githubusercontent.com/8428709/159808994-efa0afcb-2d76-44fb-9e02-01e649b81726.jpg)
+
+**maui_uwp**
+
+![maui_uwp](https://user-images.githubusercontent.com/8428709/159809002-20486dd7-160f-4abc-8378-fe2842d520a2.jpg)
+
+**maui_blazor_uwp**
+
+![maui_blazor_uwp](https://user-images.githubusercontent.com/8428709/159809012-fd6a146f-196a-4046-a7f9-74200b74bfaa.jpg)
+
+**maui_blazor_android**
+
+![maui_blazor_android](https://user-images.githubusercontent.com/8428709/159809020-2def12a9-1d24-484d-94e4-4afa791fd7bf.jpg)
+
+**BlazorWinForms**
+
+![BlazorWinForms](https://user-images.githubusercontent.com/8428709/159810015-8df0aaee-9511-40c2-9b0f-6e4b3e8a22d3.jpg)
+
+**BlazorWpf**
+
+![BlazorWpf](https://user-images.githubusercontent.com/8428709/159810029-100af852-af43-4650-90f1-d24da4c3c03d.jpg)
 
 ----
 

@@ -30,7 +30,12 @@ BlazorHybrid: BlazorWinForms , BlazorWpf
 
 ![maui_blazor_android](https://user-images.githubusercontent.com/8428709/159809020-2def12a9-1d24-484d-94e4-4afa791fd7bf.jpg)
 
+**maui_blazor_mac**
+
+<img width="802" alt="截屏2022-03-25 下午10 45 18" src="https://user-images.githubusercontent.com/8428709/160206776-96a182b2-84c5-41d2-8907-99341aa3bd9c.png">
+
 **BlazorWinForms**
+
 
 ![BlazorWinForms](https://user-images.githubusercontent.com/8428709/159810015-8df0aaee-9511-40c2-9b0f-6e4b3e8a22d3.jpg)
 

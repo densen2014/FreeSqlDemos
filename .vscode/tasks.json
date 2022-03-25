@@ -1,0 +1,80 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "buildMauiBlazorApp2-maccatalyst",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/Maui/MauiBlazorApp2/MauiBlazorApp2.csproj",
+                //"build -t:Run -f net6.0-maccatalyst",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            //dotnet build -t:Run -f net6.0-android
+            "label": "Run-buildMauiBlazorApp2-android",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "--framework",
+                "net6.0-android",
+                "--project",
+                "${workspaceFolder}/Maui/MauiBlazorApp2/MauiBlazorApp2.csproj",
+              ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/ARM_ConsoleApp/ARM_ConsoleApp.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "publish",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/ARM_ConsoleApp/ARM_ConsoleApp.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "watch",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "--project",
+                "${workspaceFolder}/ARM_ConsoleApp/ARM_ConsoleApp.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+          "label": "buildBlazorWpf1",
+          "command": "dotnet",
+          "type": "process",
+          "args": [
+            "build",
+            "${workspaceFolder}/Maui/BlazorWpf1//BlazorWpf1.csproj",
+            "/property:GenerateFullPaths=true",
+            "/consoleloggerparameters:NoSummary"
+          ],
+          "problemMatcher": "$msCompile"
+        }
+    ]
+}

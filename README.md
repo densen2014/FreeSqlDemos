@@ -14,6 +14,20 @@ MauiBlazor: Android, iOS , MacCatalyst , Windows (UWP)
 
 BlazorHybrid: BlazorWinForms , BlazorWpf
 
+----
+> FreeSql QQ群：4336577(已满)、8578575(已满)、52508226(在线)
+----
+
+> BlazorMaui+bb demo ：[GitHub](https://github.com/densen2014/BlazorMaui) | [Gitee(仅副本)](https://gitee.com/alexchow/BlazorMaui")
+ 
+> 在 Mac 上开发 .NET MAUI（全）<https://www.cnblogs.com/densen2014/p/16057571.html>
+
+> 在 M1 Mac 上开发 .NET MAUI (iOS) <https://www.cnblogs.com/densen2014/p/16057563.html>
+
+> 在 Windows 上开发 .NET MAUI <https://docs.microsoft.com/zh-cn/dotnet/maui/get-started/installation>
+
+----
+
 **maui_andrid**
 
 ![maui_andrid](https://user-images.githubusercontent.com/8428709/159808994-efa0afcb-2d76-44fb-9e02-01e649b81726.jpg)

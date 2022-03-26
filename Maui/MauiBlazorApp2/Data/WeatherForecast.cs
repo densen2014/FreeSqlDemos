@@ -1,4 +1,4 @@
-namespace MauiBlazorApp2.Data;
+namespace MauiBlazorFreeSql.Data;
 
 public class WeatherForecast
 {

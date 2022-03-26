@@ -49,9 +49,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreeSql.Provider.Sqlite", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreeSql.Provider.SqliteCore", "..\FreeSql\Providers\FreeSql.Provider.SqliteCore\FreeSql.Provider.SqliteCore.csproj", "{630D5AF5-52E7-461D-A048-9710B550595F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiApp2", "Maui\MauiApp2\MauiApp2.csproj", "{376E1EDD-B076-453F-A75D-E7BAC9D4C08E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiFreeSql", "Maui\MauiApp2\MauiFreeSql.csproj", "{376E1EDD-B076-453F-A75D-E7BAC9D4C08E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiBlazorApp2", "Maui\MauiBlazorApp2\MauiBlazorApp2.csproj", "{1C479393-0ABD-4ABD-90D2-5699F7FE90E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiBlazorFreeSql", "Maui\MauiBlazorApp2\MauiBlazorFreeSql.csproj", "{1C479393-0ABD-4ABD-90D2-5699F7FE90E0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项", "解决方案项", "{CF3FFBBC-E874-451E-95DB-D67361E13182}"
 	ProjectSection(SolutionItems) = preProject

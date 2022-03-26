@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components.WebView.Maui;
-using MauiBlazorApp2.Data;
+using MauiBlazorFreeSql.Data;
 
-namespace MauiBlazorApp2;
+namespace MauiBlazorFreeSql;
 
 public static class MauiProgram
 {

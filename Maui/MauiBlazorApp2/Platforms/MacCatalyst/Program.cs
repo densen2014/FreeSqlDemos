@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace MauiBlazorApp2;
+namespace MauiBlazorFreeSql;
 
 public class Program
 {

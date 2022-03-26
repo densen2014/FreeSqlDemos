@@ -1,4 +1,4 @@
-﻿namespace MauiApp2;
+﻿namespace MauiFreeSql;
 
 public static class MauiProgram
 {

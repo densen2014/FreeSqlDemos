@@ -2,8 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:b="clr-namespace:Microsoft.AspNetCore.Components.WebView.Maui;assembly=Microsoft.AspNetCore.Components.WebView.Maui"
-             xmlns:local="clr-namespace:MauiBlazorApp2"
-             x:Class="MauiBlazorApp2.MainPage"
+             xmlns:local="clr-namespace:MauiBlazorFreeSql"
+             x:Class="MauiBlazorFreeSql.MainPage"
              BackgroundColor="{DynamicResource PageBackgroundColor}">
 
     <b:BlazorWebView HostPage="wwwroot/index.html">

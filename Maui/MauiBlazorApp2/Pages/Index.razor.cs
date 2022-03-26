@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using LibraryShared;
  
 
-namespace MauiBlazorApp2.Pages
+namespace MauiBlazorFreeSql.Pages
 {
     public partial class Index
     {

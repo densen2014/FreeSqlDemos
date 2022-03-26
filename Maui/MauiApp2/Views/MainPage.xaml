@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:MauiApp2"
-             x:Class="MauiApp2.MainPage"
+             xmlns:local="clr-namespace:MauiFreeSql"
+             x:Class="MauiFreeSql.MainPage"
              BackgroundColor="{DynamicResource SecondaryColor}"
              Title="{Binding Title2}"
              >
@@ -15,7 +15,7 @@
               Padding="{OnPlatform iOS='30,60,30,30', Default='30'}">
 
             <Label 
-                Text="Hello, MAUI with freeSql!"
+                Text="Hello, MauiFreeSql!"
                 Grid.Row="0"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="30"

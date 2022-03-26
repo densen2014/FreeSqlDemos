@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 
-namespace MauiApp2;
+namespace MauiFreeSql;
 
 public class MainViewModel : INotifyPropertyChanged
 {

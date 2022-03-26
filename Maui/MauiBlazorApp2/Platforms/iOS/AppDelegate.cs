@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace MauiBlazorApp2;
+namespace MauiBlazorFreeSql;
 
 [Register("AppDelegate")]
 public class AppDelegate : MauiUIApplicationDelegate

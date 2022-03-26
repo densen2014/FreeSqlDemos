@@ -76,6 +76,7 @@
             "problemMatcher": "$msCompile"
         },
         {
+            //模拟器 C:\Program Files (x86)\Android\android-sdk\emulator\emulator.EXE -netfast -avd pixel_5_-_api_30 -prop monodroid.avdname=pixel_5_-_api_30
             //dotnet build -t:Run -f net6.0-android
             "label": "RunMauiBlazorApp2-android",
             "command": "dotnet",

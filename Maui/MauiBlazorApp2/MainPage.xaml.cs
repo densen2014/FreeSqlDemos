@@ -1,4 +1,4 @@
-﻿namespace MauiBlazorApp2;
+﻿namespace MauiBlazorFreeSql;
 
 public partial class MainPage : ContentPage
 {

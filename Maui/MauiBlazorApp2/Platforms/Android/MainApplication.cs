@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace MauiBlazorApp2;
+namespace MauiBlazorFreeSql;
 
 [Application]
 public class MainApplication : MauiApplication

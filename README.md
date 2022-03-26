@@ -20,7 +20,7 @@ BlazorHybrid: BlazorWinForms , BlazorWpf
 > BA & Blazor QQ群：795206915、675147445
 ----
 
-> BlazorMaui+bb demo ：[GitHub](https://github.com/densen2014/BlazorMaui) | [Gitee(仅副本)](https://gitee.com/alexchow/BlazorMaui")
+> BlazorMaui+bb demo ：[GitHub](https://github.com/densen2014/BlazorMaui) | [Gitee(仅副本)](https://gitee.com/alexchow/BlazorMaui)
 > 
 > 在 Mac 上开发 .NET MAUI（全）<https://www.cnblogs.com/densen2014/p/16057571.html>
 > 

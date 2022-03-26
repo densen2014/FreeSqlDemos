@@ -2,33 +2,6 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "buildMauiBlazorApp2-maccatalyst",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "build",
-                "${workspaceFolder}/Maui/MauiBlazorApp2/MauiBlazorApp2.csproj",
-                //"build -t:Run -f net6.0-maccatalyst",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
-            ],
-            "problemMatcher": "$msCompile"
-        },
-        {
-            //dotnet build -t:Run -f net6.0-android
-            "label": "Run-buildMauiBlazorApp2-android",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "build",
-                "--framework",
-                "net6.0-android",
-                "--project",
-                "${workspaceFolder}/Maui/MauiBlazorApp2/MauiBlazorApp2.csproj",
-              ],
-            "problemMatcher": "$msCompile"
-        },
-        {
             "label": "build",
             "command": "dotnet",
             "type": "process",
@@ -75,6 +48,46 @@
             "/consoleloggerparameters:NoSummary"
           ],
           "problemMatcher": "$msCompile"
-        }
+        },
+        {
+            "label": "buildMauiBlazorApp2-maccatalyst",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/Maui/MauiBlazorApp2/MauiBlazorApp2.csproj",
+                //"build -t:Run -f net6.0-maccatalyst",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            //dotnet build -t:Run -f net6.0-android
+            "label": "buildMauiBlazorApp2-android",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/Maui/MauiBlazorApp2/MauiBlazorApp2.csproj",
+                "--framework",
+                "net6.0-android"
+              ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            //dotnet build -t:Run -f net6.0-android
+            "label": "RunMauiBlazorApp2-android",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/Maui/MauiBlazorApp2/MauiBlazorApp2.csproj",
+                "-t:Run",
+                "--framework",
+                "net6.0-android"
+              ],
+            "problemMatcher": "$msCompile"
+        },
     ]
 }

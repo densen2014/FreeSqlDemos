@@ -37,34 +37,6 @@
             }
         },
         {
-            //dotnet build -t:Run -f net6.0-maccatalyst
-            //dotnet build -t:Run -f net6.0-ios
-            //dotnet run --framework net6.0-maccatalyst
-            "name": "MauiBlazorApp2-android",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "Run-buildMauiBlazorApp2-android",
-            "program": "${workspaceFolder}/Maui/MauiBlazorApp2/bin/Debug/net6.0-windows/MauiBlazorApp2.dll",
-            "args": [],
-            "cwd": "${workspaceFolder}/Maui/MauiBlazorApp2",
-            "stopAtEntry": false,
-            "console": "internalConsole"
-        },
-        {
-            //dotnet build -t:Run -f net6.0-maccatalyst
-            //dotnet build -t:Run -f net6.0-ios
-            //dotnet run --framework net6.0-maccatalyst
-            "name": "MauiBlazorApp2-maccatalyst",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "buildMauiBlazorApp2-maccatalyst",
-            "program": "${workspaceFolder}/Maui/MauiBlazorApp2/bin/Debug/net6.0-maccatalyst/MauiBlazorApp2.dll",
-            "args": [],
-            "cwd": "${workspaceFolder}/Maui/MauiBlazorApp2",
-            "stopAtEntry": false,
-            "console": "internalConsole"
-        },
-        {
             "name": "ARM_ConsoleApp",
             "type": "coreclr",
             "request": "launch",
@@ -96,6 +68,34 @@
           "cwd": "${workspaceFolder}/Maui/BlazorWpf1",
           "console": "internalConsole",
           "stopAtEntry": false
+        },
+        {
+            //dotnet build -t:Run -f net6.0-maccatalyst
+            //dotnet build -t:Run -f net6.0-ios
+            //dotnet run --framework net6.0-maccatalyst
+            "name": "MauiBlazorApp2-android",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "buildMauiBlazorApp2-android",
+            "program": "${workspaceFolder}/Maui/MauiBlazorApp2/bin/Debug/net6.0-android/MauiBlazorApp2.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Maui/MauiBlazorApp2",
+            "stopAtEntry": false,
+            "console": "internalConsole"
+        },
+        {
+            //dotnet build -t:Run -f net6.0-maccatalyst
+            //dotnet build -t:Run -f net6.0-ios
+            //dotnet run --framework net6.0-maccatalyst
+            "name": "MauiBlazorApp2-maccatalyst",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "buildMauiBlazorApp2-maccatalyst",
+            "program": "${workspaceFolder}/Maui/MauiBlazorApp2/bin/Debug/net6.0-maccatalyst/MauiBlazorApp2.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/Maui/MauiBlazorApp2",
+            "stopAtEntry": false,
+            "console": "internalConsole"
         },
     ]
 }

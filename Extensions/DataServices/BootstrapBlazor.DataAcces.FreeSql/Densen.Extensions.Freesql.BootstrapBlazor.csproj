@@ -19,9 +19,9 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="BootstrapBlazor" Version="6.4.9" />
-		<PackageReference Include="FreeSql.Repository" Version="3.2.100" />
-		<PackageReference Include="FreeSql.Extensions.JsonMap" Version="3.2.100" />
+		<PackageReference Include="BootstrapBlazor" Version="6.4.10" />
+		<PackageReference Include="FreeSql.Repository" Version="3.2.300" />
+		<PackageReference Include="FreeSql.Extensions.JsonMap" Version="3.2.300" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 	</ItemGroup>
 

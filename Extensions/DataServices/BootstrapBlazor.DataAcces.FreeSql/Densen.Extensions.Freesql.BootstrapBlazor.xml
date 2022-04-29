@@ -1,68 +1,101 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>Densen.DataAcces.FreeSql</name>
+        <name>Densen.FreeSql.Extensions.BootstrapBlazor</name>
     </assembly>
     <members>
-        <member name="T:Densen.DataAcces.FreeSql.DefaultDataService`1">
+        <member name="T:Densen.DataAcces.FreeSql.FreeSqlDataService`1">
             <summary>
-            FreeSql ORM 的 IDataService 接口实现
+            FreeSql ORM 的 IDataService 数据注入服务接口实现
             </summary>
         </member>
-        <member name="M:Densen.DataAcces.FreeSql.DefaultDataService`1.#ctor(IFreeSql)">
+        <member name="M:Densen.DataAcces.FreeSql.FreeSqlDataService`1.#ctor(IFreeSql)">
             <summary>
             构造函数
             </summary>
         </member>
-        <member name="M:Densen.DataAcces.FreeSql.DefaultDataService`1.DeleteAsync(System.Collections.Generic.IEnumerable{`0})">
+        <member name="M:Densen.DataAcces.FreeSql.FreeSqlDataService`1.DeleteAsync(System.Collections.Generic.IEnumerable{`0})">
             <summary>
             删除方法
             </summary>
             <param name="models"></param>
             <returns></returns>
         </member>
-        <member name="M:Densen.DataAcces.FreeSql.DefaultDataService`1.SaveAsync(`0)">
+        <member name="P:Densen.DataAcces.FreeSql.FreeSqlDataService`1.SaveManyChildsPropertyName">
+            <summary>
+            级联保存字段名
+            </summary>
+        </member>
+        <member name="M:Densen.DataAcces.FreeSql.FreeSqlDataService`1.SaveAsync(`0,BootstrapBlazor.Components.ItemChangedType)">
             <summary>
             保存方法
             </summary>
             <param name="model"></param>
+            <param name="changedType"></param>
             <returns></returns>
         </member>
-        <member name="P:Densen.DataAcces.FreeSql.DefaultDataService`1.TotalCount">
+        <member name="P:Densen.DataAcces.FreeSql.FreeSqlDataService`1.TotalCount">
             <summary>
             缓存记录总数
             </summary>
         </member>
-        <member name="P:Densen.DataAcces.FreeSql.DefaultDataService`1.Items">
+        <member name="P:Densen.DataAcces.FreeSql.FreeSqlDataService`1.Items">
             <summary>
             缓存记录
             </summary>
         </member>
-        <member name="P:Densen.DataAcces.FreeSql.DefaultDataService`1.Options">
+        <member name="P:Densen.DataAcces.FreeSql.FreeSqlDataService`1.Options">
             <summary>
             缓存查询条件
             </summary>
         </member>
-        <member name="M:Densen.DataAcces.FreeSql.DefaultDataService`1.QueryAsync(BootstrapBlazor.Components.QueryPageOptions)">
+        <member name="M:Densen.DataAcces.FreeSql.FreeSqlDataService`1.QueryAsyncWithWhereCascade(BootstrapBlazor.Components.QueryPageOptions,FreeSql.Internal.Model.DynamicFilterInfo,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            查询方法
+            </summary>
+            <param name="option"></param>
+            <param name="WhereCascade">附加查询条件使用and结合</param>
+            <param name="IncludeByPropertyNames">附加IncludeByPropertyName查询条件</param>
+            <param name="LeftJoinString">左联查询，使用原生sql语法，LeftJoin("type b on b.id = a.id")</param>
+            <param name="OrderByPropertyName">强制排序,但是手动排序优先</param>
+            <returns></returns>
+        </member>
+        <member name="M:Densen.DataAcces.FreeSql.FreeSqlDataService`1.QueryAsync(BootstrapBlazor.Components.QueryPageOptions)">
             <summary>
             查询方法
             </summary>
             <param name="option"></param>
             <returns></returns>
         </member>
-        <member name="M:Densen.DataAcces.FreeSql.DefaultDataService`1.MakeWhereLambda(BootstrapBlazor.Components.QueryPageOptions,System.Boolean@)">
+        <member name="M:Densen.DataAcces.FreeSql.FsqlUtil.Fetch``1(BootstrapBlazor.Components.QueryPageOptions,BootstrapBlazor.Components.QueryPageOptions,System.Nullable{System.Int64},System.Collections.Generic.List{``0},IFreeSql,FreeSql.Internal.Model.DynamicFilterInfo,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.String})">
             <summary>
-            生成Where子句的Lambda表达式
+            执行查询
             </summary>
-            <param name="option"></param>
-            <returns></returns>
+            <param name="options">查询条件</param>
+            <param name="optionsLast">缓存查询条件</param>
+            <param name="TotalCount"></param>
+            <param name="Items"></param>
+            <param name="fsql"></param>
+            <param name="WhereCascade">附加查询条件使用and结合</param>
+            <param name="IncludeByPropertyNames">附加IncludeByPropertyName查询条件</param>
+            <param name="LeftJoinString">左联查询，使用原生sql语法，LeftJoin("type b on b.id = a.id")</param>
+            <param name="OrderByPropertyName">强制排序,但是手动排序优先</param>
         </member>
-        <member name="M:Densen.DataAcces.FreeSql.DefaultDataService`1.MakeDynamicFilterInfo(BootstrapBlazor.Components.QueryPageOptions,System.Boolean@)">
+        <member name="M:Densen.DataAcces.FreeSql.FsqlUtil.MakeDynamicFilterInfo(BootstrapBlazor.Components.QueryPageOptions,System.Boolean@,FreeSql.Internal.Model.DynamicFilterInfo)">
             <summary>
             生成Where子句的DynamicFilterInfo对象
             </summary>
             <param name="option"></param>
             <param name="isSerach"></param>
+            <param name="WhereCascade">强制and的条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:Densen.DataAcces.FreeSql.FsqlUtil.ToDecimal(System.String,System.Decimal)">
+            <summary>
+            String转Decimal
+            </summary>
+            <param name="t"></param>
+            <param name="defaultValue"></param>
             <returns></returns>
         </member>
         <member name="T:Microsoft.Extensions.DependencyInjection.FreeSqlServiceCollectionExtensions">

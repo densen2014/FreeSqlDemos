@@ -57,15 +57,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项", "解决�
 	ProjectSection(SolutionItems) = preProject
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MAUI", "MAUI", "{AA3EE59E-F38D-4FD6-9BEF-0BAABCDD74CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWinForms1", "Maui\BlazorWinForms1\BlazorWinForms1.csproj", "{213FC281-6566-4803-B161-0E5D7ED819FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWinForms1", "Maui\BlazorWinForms1\BlazorWinForms1.csproj", "{213FC281-6566-4803-B161-0E5D7ED819FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWpf1", "BlazorWpf1\BlazorWpf1.csproj", "{93F24A6F-4ECA-42A7-88F1-B53FF9055BCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWpf1", "BlazorWpf1\BlazorWpf1.csproj", "{93F24A6F-4ECA-42A7-88F1-B53FF9055BCA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

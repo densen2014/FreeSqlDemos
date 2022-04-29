@@ -3,11 +3,7 @@
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
 		<IsPackable>true</IsPackable>
-		<PackageIcon>logo.png</PackageIcon>
-		<Version>6.3.2</Version>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Company>Densen Informatica</Company>
-		<Authors>Alex Chow</Authors>
 		<Description>BootstrapBlazor的FreeSql数据注入服务扩展包</Description>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/densen2014/FreeSqlDemos</PackageProjectUrl>
@@ -27,6 +23,7 @@
 
 	<ItemGroup>
 		<None Include="logo.png" Pack="true" PackagePath="" />
+		<None Include="README.md" Pack="true" PackagePath="" />
 	</ItemGroup>
 
 </Project>

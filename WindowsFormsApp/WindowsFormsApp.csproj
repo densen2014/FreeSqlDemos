@@ -81,10 +81,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FreeSql.Provider.PostgreSQL">
-      <Version>3.2.100</Version>
+      <Version>3.2.665</Version>
     </PackageReference>
     <PackageReference Include="FreeSql.Provider.Sqlite">
-      <Version>3.2.100</Version>
+      <Version>3.2.665</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

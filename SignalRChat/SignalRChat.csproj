@@ -10,8 +10,8 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
-    <PackageReference Include="FreeSql.Provider.Sqlite" Version="3.2.100" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="FreeSql.Provider.Sqlite" Version="3.2.665" />
   </ItemGroup>
 
 </Project>

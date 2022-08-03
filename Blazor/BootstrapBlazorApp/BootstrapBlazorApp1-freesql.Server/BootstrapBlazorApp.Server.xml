@@ -1,0 +1,281 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BootstrapBlazorApp.Server</name>
+    </assembly>
+    <members>
+        <member name="T:BootstrapBlazorApp1_freesql.Models.Item">
+            <summary>
+            项目
+            </summary>
+        </member>
+        <member name="T:BootstrapBlazorApp.Server.Pages.Block">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BootstrapBlazorApp.Server.Pages.Block.Title">
+            <summary>
+            获得/设置 组件 Title 属性
+            </summary>
+        </member>
+        <member name="P:BootstrapBlazorApp.Server.Pages.Block.Introduction">
+            <summary>
+            获得/设置 组件说明信息
+            </summary>
+        </member>
+        <member name="P:BootstrapBlazorApp.Server.Pages.Block.ChildContent">
+            <summary>
+            获得/设置 组件内容
+            </summary>
+        </member>
+        <member name="M:BootstrapBlazorApp.Server.Pages.Block.OnInitialized">
+            <summary>
+            OnInitialized 方法
+            </summary>
+        </member>
+        <member name="M:BootstrapBlazorApp.Server.Pages.Index.OnDeleteAsync(System.Collections.Generic.IEnumerable{BootstrapBlazorApp1_freesql.Models.Item})">
+             <summary>
+            
+             </summary>
+             <param name="items"></param>
+             <returns></returns>
+        </member>
+        <member name="P:BootstrapBlazorApp.Server.Pages.Index.SearchModel">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:BootstrapBlazorApp.Server.Pages.Index.OnResetSearchAsync(BootstrapBlazorApp1_freesql.Models.Item)">
+             <summary>
+            
+             </summary>
+             <param name="item"></param>
+             <returns></returns>
+        </member>
+        <member name="P:BootstrapBlazorApp.Server.Pages.Index.PageItemsSource">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:BootstrapBlazorApp.Server.Pages.Index.OnQueryAsync(BootstrapBlazor.Components.QueryPageOptions)">
+             <summary>
+            
+             </summary>
+             <param name="options"></param>
+             <returns></returns>
+        </member>
+        <member name="M:BootstrapBlazorApp.Server.Pages.Index.BindItemQueryAsync(System.Collections.Generic.IEnumerable{BootstrapBlazorApp1_freesql.Models.Item},BootstrapBlazor.Components.QueryPageOptions)">
+             <summary>
+            
+             </summary>
+             <param name="items"></param>
+             <param name="options"></param>
+             <returns></returns>
+        </member>
+        <member name="T:BootstrapBlazorApp.Server.Pages.TablesBase">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BootstrapBlazorApp.Server.Pages.TablesBase.ToastService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:BootstrapBlazorApp.Server.Pages.TablesBase.random">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:BootstrapBlazorApp.Server.Pages.TablesBase.GenerateItems">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:BootstrapBlazorApp.Server.Pages.TablesBase.Items">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:BootstrapBlazorApp.Server.Pages.BindItem">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BootstrapBlazorApp.Server.Pages.BindItem.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BootstrapBlazorApp.Server.Pages.BindItem.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BootstrapBlazorApp.Server.Pages.BindItem.DateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BootstrapBlazorApp.Server.Pages.BindItem.Address">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BootstrapBlazorApp.Server.Pages.BindItem.Count">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BootstrapBlazorApp.Server.Pages.BindItem.Complete">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BootstrapBlazorApp.Server.Pages.BindItem.Education">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:BootstrapBlazorApp.Server.Pages.EnumEducation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:BootstrapBlazorApp.Server.Pages.EnumEducation.Primary">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:BootstrapBlazorApp.Server.Pages.EnumEducation.Middel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:BootstrapBlazorApp.Server.Pages.EnumEducation.Hight">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:BootstrapBlazorApp.Server.Pages.TablesBaseEdit">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BootstrapBlazorApp.Server.Pages.TablesBaseEdit.EditItems">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BootstrapBlazorApp.Server.Pages.TablesBaseEdit.Educations">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:BootstrapBlazorApp.Server.Pages.TablesBaseEdit.OnInitialized">
+            <summary>
+            OnInitialized 方法
+            </summary>
+        </member>
+        <member name="M:BootstrapBlazorApp.Server.Pages.TablesBaseEdit.OnEditQueryAsync(BootstrapBlazor.Components.QueryPageOptions)">
+            <summary>
+            
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BootstrapBlazorApp.Server.Pages.TablesBaseEdit.OnAddAsync">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BootstrapBlazorApp.Server.Pages.TablesBaseEdit.OnSaveAsync(BootstrapBlazorApp.Server.Pages.BindItem)">
+            <summary>
+            
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BootstrapBlazorApp.Server.Pages.TablesBaseEdit.OnDeleteAsync(System.Collections.Generic.IEnumerable{BootstrapBlazorApp.Server.Pages.BindItem})">
+            <summary>
+            
+            </summary>
+            <param name="items"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BootstrapBlazorApp.Server.Pages.TablesBaseQuery">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BootstrapBlazorApp.Server.Pages.TablesBaseQuery.SearchModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:BootstrapBlazorApp.Server.Pages.TablesBaseQuery.OnResetSearchAsync(BootstrapBlazorApp.Server.Pages.BindItem)">
+            <summary>
+            
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="P:BootstrapBlazorApp.Server.Pages.TablesBaseQuery.PageItemsSource">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:BootstrapBlazorApp.Server.Pages.TablesBaseQuery.OnQueryAsync(BootstrapBlazor.Components.QueryPageOptions)">
+            <summary>
+            
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BootstrapBlazorApp.Server.Pages.TablesBaseQuery.BindItemQueryAsync(System.Collections.Generic.IEnumerable{BootstrapBlazorApp.Server.Pages.BindItem},BootstrapBlazor.Components.QueryPageOptions)">
+            <summary>
+            
+            </summary>
+            <param name="items"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BootstrapBlazorApp.Server.Shared.MainLayout">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:BootstrapBlazorApp.Server.Shared.MainLayout.OnInitialized">
+            <summary>
+            OnInitialized 方法
+            </summary>
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.TableDemoDataServiceCollectionExtensions">
+            <summary>
+            BootstrapBlazor 服务扩展类
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.TableDemoDataServiceCollectionExtensions.AddTableDemoDataService(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            增加 PetaPoco 数据库操作服务
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.TableDemoDataService`1">
+            <summary>
+            演示网站示例数据注入服务实现类
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.TableDemoDataService`1.QueryAsync(BootstrapBlazor.Components.QueryPageOptions)">
+            <summary>
+            查询操作方法
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

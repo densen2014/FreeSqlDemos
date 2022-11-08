@@ -4,11 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace WindowsFormsApp
 {
@@ -39,6 +42,8 @@ namespace WindowsFormsApp
         {
             InitializeComponent();
             //初始化demo数据
+            // In Main method:
+            mainThreadId = System.Threading.Thread.CurrentThread.ManagedThreadId;
 
             var ItemList = new List<Item>()
             {
@@ -67,14 +72,45 @@ namespace WindowsFormsApp
             dataGridView1.DataSource = ItemList;
         }
 
-        private void buttonADD_Click(object sender, EventArgs e)
-        {
-            var newone = new Item {
-                Text = "新的" + DateTime .Now.Ticks.ToString(),
-                Description = "This is an new item description."
-            };
+        static int mainThreadId;
 
-            fsql.Insert<Item>().AppendData(newone).ExecuteAffrows();
+        // If called in the non main thread, will return false;
+        public static bool IsMainThread
+        {
+            get { return System.Threading.Thread.CurrentThread.ManagedThreadId == mainThreadId; }
+        }
+
+        private async void buttonADD_Click(object sender, EventArgs e)
+        {
+            Debug.WriteLine(Thread.CurrentThread.ManagedThreadId.ToString());
+            Debug.WriteLine(IsMainThread ? "MainThread" : "f");
+            this.Text=$"start add in Thread {Thread.CurrentThread.ManagedThreadId}";
+            await Task.Run(async () =>
+            {
+
+                var items = new List<Item>();
+                var _threadId = 0;
+                for (int i = 0; i < 20; i++)
+                {
+                    _threadId = Thread.CurrentThread.ManagedThreadId;
+                    Debug.WriteLine(_threadId.ToString());
+                    Debug.WriteLine(IsMainThread ? "MainThread" : "f");
+                    this.Invoke(() => this.Text = $"work in Thread {_threadId} ,  {i}  / 20");
+                    await Task.Delay(500);
+                    var newone = new Item
+                    {
+                        Text = "新的" + DateTime.Now.Ticks.ToString(),
+                        Description = "This is an new item description."
+                    };
+                    items.Add(newone);
+                }
+
+                await fsql.Insert<Item>().AppendData(items).ExecuteAffrowsAsync();
+            });
+
+            Debug.WriteLine(Thread.CurrentThread.ManagedThreadId.ToString());
+            Debug.WriteLine(IsMainThread ? "MainThread" : "f");
+            MessageBox.Show("Done");
             RefreshData();
         }
 

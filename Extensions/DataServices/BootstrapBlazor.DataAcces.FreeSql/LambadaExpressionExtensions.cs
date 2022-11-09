@@ -71,8 +71,8 @@ namespace System.Linq.Expressions
         /// 创建lambda表达式：p=>p.propertyName == propertyValue
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="column"></param>
-        /// <param name="value"></param>
+        /// <param name="propertyName"></param>
+        /// <param name="propertyValue"></param> 
         /// <returns></returns>
         public static Expression<Func<T, bool>> CreateEqual<T>(string propertyName, object propertyValue)
         {
@@ -101,8 +101,8 @@ namespace System.Linq.Expressions
         /// 创建lambda表达式：p=>p.propertyName > propertyValue
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="column"></param>
-        /// <param name="value"></param>
+        /// <param name="propertyName"></param>
+        /// <param name="propertyValue"></param>
         /// <returns></returns>
         public static Expression<Func<T, bool>> CreateGreaterThan<T>(string propertyName, string propertyValue)
         {
@@ -113,11 +113,11 @@ namespace System.Linq.Expressions
         }
 
         /// <summary>
-        /// 创建lambda表达式：p=>p.propertyName < propertyValue
+        /// 创建lambda表达式：p=>p.propertyName   propertyValue
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="column"></param>
-        /// <param name="value"></param>
+        /// <param name="propertyName"></param>
+        /// <param name="propertyValue"></param>
         /// <returns></returns>
         public static Expression<Func<T, bool>> CreateLessThan<T>(string propertyName, string propertyValue)
         {
@@ -131,8 +131,8 @@ namespace System.Linq.Expressions
         /// 创建lambda表达式：p=>p.propertyName >= propertyValue
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="column"></param>
-        /// <param name="value"></param>
+        /// <param name="propertyName"></param>
+        /// <param name="propertyValue"></param> 
         /// <returns></returns>
         public static Expression<Func<T, bool>> CreateGreaterThanOrEqual<T>(string propertyName, string propertyValue)
         {
@@ -143,11 +143,11 @@ namespace System.Linq.Expressions
         }
 
         /// <summary>
-        /// 创建lambda表达式：p=>p.propertyName <= propertyValue
+        /// 创建lambda表达式：p=>p.propertyName  propertyValue
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="column"></param>
-        /// <param name="value"></param>
+        /// <param name="propertyName"></param>
+        /// <param name="propertyValue"></param>
         /// <returns></returns>
         public static Expression<Func<T, bool>> CreateLessThanOrEqual<T>(string propertyName, string propertyValue)
         {
@@ -156,13 +156,13 @@ namespace System.Linq.Expressions
             ConstantExpression constant = Expression.Constant(propertyValue);//创建常数
             return Expression.Lambda<Func<T, bool>>(Expression.LessThanOrEqual(member, constant), parameter);
         }
- 
+
         /// <summary>
         /// 创建lambda表达式：p=>p.propertyName.Contains(propertyValue)
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="column"></param>
-        /// <param name="value"></param>
+        /// <param name="propertyName"></param>
+        /// <param name="propertyValue"></param>
         /// <returns></returns>
         public static Expression<Func<T, bool>> GetContains<T>(string propertyName, string propertyValue)
         {
@@ -177,8 +177,8 @@ namespace System.Linq.Expressions
         /// 创建lambda表达式：!(p=>p.propertyName.Contains(propertyValue))
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="column"></param>
-        /// <param name="value"></param>
+        /// <param name="propertyName"></param>
+        /// <param name="propertyValue"></param>
         /// <returns></returns>
         public static Expression<Func<T, bool>> GetNotContains<T>(string propertyName, string propertyValue)
         {

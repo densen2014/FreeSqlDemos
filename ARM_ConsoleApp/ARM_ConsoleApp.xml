@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ARM_ConsoleApp</name>
+    </assembly>
+    <members>
+        <member name="T:System.Linq.Expressions.LambadaExpression">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Linq.Expressions.LambadaExpression.True``1">
+            <summary>
+            创建lambda表达式：p=>true
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Linq.Expressions.LambadaExpression.False``1">
+            <summary>
+            创建lambda表达式：p=>false
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:System.Linq.Expressions.LambadaExpression.CreatePropertyName``1(System.String)">
+            <summary>
+            创建lambda表达式：p=>p.propertyName 
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="propertyName"></param> 
+            <returns></returns>
+        </member>
+        <member name="M:System.Linq.Expressions.LambadaExpression.CreateEqual``1(System.String,System.Object)">
+            <summary>
+            创建lambda表达式：p=>p.propertyName == propertyValue
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="propertyName"></param>
+            <param name="propertyValue"></param> 
+            <returns></returns>
+        </member>
+        <member name="M:System.Linq.Expressions.LambadaExpression.CreateNotEqual``1(System.String,System.String)">
+            <summary>
+            创建lambda表达式：p=>p.propertyName != propertyValue
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="propertyName"></param>
+            <param name="propertyValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Linq.Expressions.LambadaExpression.CreateGreaterThan``1(System.String,System.String)">
+            <summary>
+            创建lambda表达式：p=>p.propertyName > propertyValue
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="propertyName"></param>
+            <param name="propertyValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Linq.Expressions.LambadaExpression.CreateLessThan``1(System.String,System.String)">
+            <summary>
+            创建lambda表达式：p=>p.propertyName 小于 propertyValue
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="propertyName"></param>
+            <param name="propertyValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Linq.Expressions.LambadaExpression.CreateGreaterThanOrEqual``1(System.String,System.String)">
+            <summary>
+            创建lambda表达式：p=>p.propertyName >= propertyValue
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="propertyName"></param>
+            <param name="propertyValue"></param> 
+            <returns></returns>
+        </member>
+        <member name="M:System.Linq.Expressions.LambadaExpression.CreateLessThanOrEqual``1(System.String,System.String)">
+            <summary>
+            创建lambda表达式：p=>p.propertyName 小于等于 propertyValue
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="propertyName"></param>
+            <param name="propertyValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Linq.Expressions.LambadaExpression.GetContains``1(System.String,System.String)">
+            <summary>
+            创建lambda表达式：p=>p.propertyName.Contains(propertyValue)
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="propertyName"></param>
+            <param name="propertyValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Linq.Expressions.LambadaExpression.GetNotContains``1(System.String,System.String)">
+            <summary>
+            创建lambda表达式：!(p=>p.propertyName.Contains(propertyValue))
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="propertyName"></param>
+            <param name="propertyValue"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

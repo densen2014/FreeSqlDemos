@@ -3,7 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Runtime.InteropServices;
+using System.Linq.Expressions;
+using System.Runtime.InteropServices; 
 
 namespace FreeSqlDemos
 {
@@ -66,7 +67,13 @@ namespace FreeSqlDemos
                 fsql.Insert<Item>().AppendData(ItemList).ExecuteAffrows();
             }
             ItemList = fsql.Select<Item>().ToList();
-
+            Expression<Func<Item, int>> sum = null;
+            sum = LambadaExpression.CreatePropertyName<Item>("Id");
+            var sums=fsql.Select<Item>().Sum(sum);
+            sum = LambadaExpression.CreatePropertyName<Item>(sexID.Id_2.ToDescriptionOrString());
+            var sums2=fsql.Select<Item>().Sum(sum);
+            sum = LambadaExpression.CreatePropertyName<Item>("Id");
+            var sums3=fsql.Select<Item>().Sum(sum);
 
             Console.WriteLine("\r\n\r\nItemListCount: " + ItemList.Count());
             Console.WriteLine("\r\n\r\nLastItem: " + ItemList.Last().Text);
@@ -84,12 +91,25 @@ namespace FreeSqlDemos
         }
     }
 
+    public enum sexID
+    {
+        [Description("Id")]
+        Id_1 ,
+        [Description("Id2")]
+        Id_2,
+        [Description("Id3")]
+        Id_3
+
+    }
+
     [Index("Idu001", "Idu", true)]
     public class Item
     {
         [Column(IsIdentity = true, IsPrimary = true)]
         [DisplayName("序号")]
         public int Id { get; set; }
+        public int Id2 { get; set; }
+        public int Id3 { get; set; }
 
         [DisplayName("名称")]
         public string Text { get; set; }

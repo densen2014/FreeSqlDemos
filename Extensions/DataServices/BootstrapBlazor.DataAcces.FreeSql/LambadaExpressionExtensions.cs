@@ -66,7 +66,19 @@ namespace System.Linq.Expressions
         //    var invokedExpression = Expression.Invoke(expression2, expression1.Parameters.Cast<Expression>());
         //    return Expression.Lambda<Func<T, bool>>(Expression.And(expression1.Body, invokedExpression), expression1.Parameters);
         //}
-
+        
+        /// <summary>
+        /// 创建lambda表达式：p=>p.propertyName 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="propertyName"></param> 
+        /// <returns></returns>
+        public static Expression<Func<T, int>> CreatePropertyName<T>(string propertyName)
+        {
+            ParameterExpression parameter = Expression.Parameter(typeof(T), "p");//创建参数p
+            MemberExpression member = Expression.PropertyOrField(parameter, propertyName);
+            return Expression.Lambda<Func<T, int>>(member, parameter);
+        }
         /// <summary>
         /// 创建lambda表达式：p=>p.propertyName == propertyValue
         /// </summary>

@@ -405,7 +405,7 @@ namespace Densen.DataAcces.FreeSql
 
 
 
-             public static bool IsNumeric(this string text) => double.TryParse(text, out _);
+             static bool IsNumeric(this string text) => double.TryParse(text, out _);
 
             /// <summary>
             /// String转Decimal
@@ -413,7 +413,7 @@ namespace Densen.DataAcces.FreeSql
             /// <param name="t"></param>
             /// <param name="defaultValue"></param>
             /// <returns></returns>
-            public static decimal ToDecimal(this string t, decimal defaultValue = 0m)
+            static decimal ToDecimal(this string t, decimal defaultValue = 0m)
             {
                 try
                 {
@@ -425,7 +425,7 @@ namespace Densen.DataAcces.FreeSql
                 }
                 return defaultValue;
             }
-            public static double ToDouble(this string t, double defaultValue = 0d)
+            static double ToDouble(this string t, double defaultValue = 0d)
             {
                 try
                 {

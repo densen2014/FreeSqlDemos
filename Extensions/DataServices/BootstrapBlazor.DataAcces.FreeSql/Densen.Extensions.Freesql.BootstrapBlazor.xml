@@ -131,6 +131,14 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
+        <member name="M:System.Linq.Expressions.LambadaExpression.CreatePropertyName``1(System.String)">
+            <summary>
+            创建lambda表达式：p=>p.propertyName 
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="propertyName"></param> 
+            <returns></returns>
+        </member>
         <member name="M:System.Linq.Expressions.LambadaExpression.CreateEqual``1(System.String,System.Object)">
             <summary>
             创建lambda表达式：p=>p.propertyName == propertyValue

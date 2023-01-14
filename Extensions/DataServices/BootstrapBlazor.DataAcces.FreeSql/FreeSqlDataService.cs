@@ -84,7 +84,21 @@ namespace Densen.DataAcces.FreeSql
         /// <summary>
         /// 缓存记录
         /// </summary>
-        List<TModel> Items { get; set; }
+        public List<TModel> Items { get; set; }
+        
+        /// <summary>
+        /// 全部记录
+        /// </summary>
+        public List<TModel> GetAllItems(
+                    DynamicFilterInfo WhereCascade = null,
+                    List<string> IncludeByPropertyNames = null,
+                    string LeftJoinString = null,
+                    List<string> OrderByPropertyName = null,
+                    List<string> WhereCascadeOr = null)
+        {
+            var res = FsqlUtil.Fetch<TModel>(Options, Options, null, fsql, WhereCascade, IncludeByPropertyNames, LeftJoinString, OrderByPropertyName, WhereCascadeOr, true);
+            return res.Items.ToList();
+        }
 
         /// <summary>
         /// 缓存查询条件
@@ -99,15 +113,17 @@ namespace Densen.DataAcces.FreeSql
         /// <param name="IncludeByPropertyNames">附加IncludeByPropertyName查询条件</param>
         /// <param name="LeftJoinString">左联查询，使用原生sql语法，LeftJoin("type b on b.id = a.id")</param>
         /// <param name="OrderByPropertyName">强制排序,但是手动排序优先</param>
+        /// <param name="WhereCascadeOr">附加查询条件使用or结合</param>
         /// <returns></returns>
         public Task<QueryData<TModel>> QueryAsyncWithWhereCascade(
                     QueryPageOptions option,
                     DynamicFilterInfo WhereCascade = null,
                     List<string> IncludeByPropertyNames = null,
                     string LeftJoinString = null,
-                    List<string> OrderByPropertyName = null)
+                    List<string> OrderByPropertyName = null,
+                    List<string> WhereCascadeOr = null)
         {
-            var res = FsqlUtil.Fetch(option, Options, TotalCount, Items, fsql, WhereCascade, IncludeByPropertyNames, LeftJoinString, OrderByPropertyName);
+            var res = FsqlUtil.Fetch<TModel>(option, Options, TotalCount, fsql, WhereCascade, IncludeByPropertyNames, LeftJoinString, OrderByPropertyName, WhereCascadeOr);
             TotalCount = res.TotalCount;
             Items = res.Items.ToList();
             Options = option;
@@ -122,33 +138,12 @@ namespace Densen.DataAcces.FreeSql
         /// <returns></returns>
         public override Task<QueryData<TModel>> QueryAsync(QueryPageOptions option)
         {
-            var res = FsqlUtil.Fetch(option, Options, TotalCount, Items, fsql);
+            var res = FsqlUtil.Fetch<TModel>(option, Options, TotalCount, fsql);
             TotalCount = res.TotalCount;
             Items = res.Items.ToList();
             Options = option;
             return Task.FromResult(res);
         }
-
-        void initTestDatas()
-        {
-            try
-            {
-                if (fsql.Select<TModel>().Count() < 200)
-                {
-                    var sql = "";
-                    for (int i = 0; i < 200; i++)
-                    {
-                        sql += @$"INSERT INTO ""Test""(""Name"", ""DateTime"", ""Address"", ""Count"", ""Complete"", ""Education"") VALUES('周星星{i}', '2021-02-01 00:00:00', '星光大道 , {i}A', {i}, 0, 1);";
-                    }
-                    fsql.Ado.ExecuteScalar(sql);
-                }
-            }
-            catch (Exception)
-            {
-            }
-
-        }
-
 
 
     }
@@ -160,27 +155,42 @@ namespace Densen.DataAcces.FreeSql
         /// </summary>
         /// <param name="options">查询条件</param>
         /// <param name="optionsLast">缓存查询条件</param>
-        /// <param name="TotalCount"></param>
-        /// <param name="Items"></param>
+        /// <param name="TotalCount"></param> 
         /// <param name="fsql"></param>
         /// <param name="WhereCascade">附加查询条件使用and结合</param>
         /// <param name="IncludeByPropertyNames">附加IncludeByPropertyName查询条件</param>
         /// <param name="LeftJoinString">左联查询，使用原生sql语法，LeftJoin("type b on b.id = a.id")</param>
         /// <param name="OrderByPropertyName">强制排序,但是手动排序优先</param>
-        public static QueryData<TModel> Fetch<TModel>(QueryPageOptions options,
+        /// <param name="WhereCascadeOr">附加查询条件使用or结合</param>
+        /// <param name="forceAllItems">附加查询条件使用or结合</param>
+        public static QueryData<TModel> Fetch<TModel>(
+                                QueryPageOptions options,
                                 QueryPageOptions optionsLast,
                                 long? TotalCount,
-                                List<TModel> Items,
                                 IFreeSql fsql,
                                 DynamicFilterInfo WhereCascade = null,
                                 List<string> IncludeByPropertyNames = null,
                                 string LeftJoinString = null,
-                                List<string> OrderByPropertyName = null) where TModel : class, new()
+                                List<string> OrderByPropertyName = null,
+                                List<string> WhereCascadeOr = null,
+                                bool forceAllItems = false) where TModel : class, new()
         {
+                var items = new List<TModel>(); ;
+
+                // 过滤
+                var isFiltered = options.Filters.Any();
+
+                // 排序
+                var isSorted = !string.IsNullOrEmpty(options.SortName);
+
+                var isSerach = false;
+
+                if (forceAllItems) options.IsPage = false;
+                
             try
             {
 
-                var dynamicFilterInfo = MakeDynamicFilterInfo(options, out var isSerach, WhereCascade);
+                var dynamicFilterInfo = MakeDynamicFilterInfo(options, out  isSerach, WhereCascade, WhereCascadeOr);
 
                 if (TotalCount != null && !isSerach && options.PageItems != optionsLast.PageItems && TotalCount <= optionsLast.PageItems)
                 {
@@ -210,19 +220,38 @@ namespace Densen.DataAcces.FreeSql
 
                     if (OrderByPropertyName != null)
                     {
-                        foreach (var item in OrderByPropertyName)
+                        foreach (var itemtemp in OrderByPropertyName)
                         {
                             try
                             {
-                                fsql_select = fsql_select.OrderByPropertyName(item);
+                                var item = itemtemp;
+                                var isAscending = true;
+                                if (item.EndsWith(" desc"))
+                                {
+                                    isAscending = false;
+                                    item = item.Replace(" desc", "");
+                                }
+                                if (item.StartsWith("len("))
+                                {
+                                    fsql_select = fsql_select.OrderBy(item);
+                                }
+                                else if (options.SortOrder == SortOrder.Unset)
+                                {
+                                    fsql_select = fsql_select.OrderByPropertyName(item, isAscending);
+                                }
+                                else if (options.SortOrder != SortOrder.Unset && options.SortName != null && !item.Equals(options.SortName))
+                                {
+                                    //过滤预设排序名称和点击排序名称一致的情况
+                                    fsql_select = fsql_select.OrderByPropertyName(item, isAscending);
+                                }
                             }
                             catch
                             {
-                                fsql_select = fsql_select.OrderBy(item);
+                                fsql_select = fsql_select.OrderBy(itemtemp);
                             }
                         }
                     }
-
+                    
                     //分页==1才获取记录总数量,省点性能
                     long count = 0;
                     if (options.PageIndex == 1) fsql_select = fsql_select.Count(out count);
@@ -230,7 +259,7 @@ namespace Densen.DataAcces.FreeSql
                     //判断是否分页
                     if (options.IsPage) fsql_select = fsql_select.Page(options.PageIndex, options.PageItems);
 
-                    Items = fsql_select.ToList();
+                    items = fsql_select.ToList();
 
                     TotalCount = options.PageIndex == 1 ? count : TotalCount;
 
@@ -239,13 +268,16 @@ namespace Densen.DataAcces.FreeSql
             catch (Exception e)
             {
                 Console.WriteLine("IdlebusDataService Error: " + e.Message);
-                Items = new List<TModel>();
+                items = new List<TModel>();
                 TotalCount = 0;
             }
             var ret = new QueryData<TModel>()
             {
                 TotalCount = (int)(TotalCount ?? 0),
-                Items = Items
+                Items = items,
+                IsSorted = isSorted,
+                IsFiltered = isFiltered,
+                IsSearch = isSerach
             };
 
             return ret;
@@ -258,10 +290,12 @@ namespace Densen.DataAcces.FreeSql
         /// <param name="option"></param>
         /// <param name="isSerach"></param>
         /// <param name="WhereCascade">强制and的条件</param>
+        /// <param name="WhereCascadeOr">附加查询条件使用or结合</param>
         /// <returns></returns>
         public static DynamicFilterInfo MakeDynamicFilterInfo(QueryPageOptions option,
                                                          out bool isSerach,
-                                                         DynamicFilterInfo WhereCascade = null)
+                                                         DynamicFilterInfo WhereCascade = null,
+                                                         List<string> WhereCascadeOr = null)
         {
             var filters = new List<DynamicFilterInfo>();
 #nullable enable
@@ -324,6 +358,8 @@ namespace Densen.DataAcces.FreeSql
                         isInt = false;
                     }
                     var attr = propertyinfo.GetCustomAttribute<ColumnAttribute>();
+
+                    //过滤FreeSql忽略特性的列
                     if (attr?.IsIgnore ?? false) continue;
 
                     filters.Add(new DynamicFilterInfo()
@@ -364,6 +400,7 @@ namespace Densen.DataAcces.FreeSql
                             Value = filter.FieldValue,
                         });
                     }
+
                 }
             }
 
@@ -390,6 +427,29 @@ namespace Densen.DataAcces.FreeSql
                     return dyfilterWhereCascade;
                 }
 
+                //生成带预设条件的复合查询 Or
+                if (WhereCascadeOr != null)
+                {
+                    var filtersWhereCascade = new List<DynamicFilterInfo>();
+                    foreach (var item in WhereCascadeOr)
+                    {
+                        filtersWhereCascade.Add(new DynamicFilterInfo()
+                        {
+                            Field = item,
+                            Operator = DynamicFilterOperator.Contains,
+                            Value = option.SearchText
+                        });
+                        //fsql_select = fsql_select.Where($"{item} like '%{options.SearchText}%'");
+                    }
+                    filtersWhereCascade.Add(dyfilter);
+                    DynamicFilterInfo dyfilterWhereCascadeOr = new DynamicFilterInfo()
+                    {
+                        Logic = DynamicFilterLogic.Or,
+                        Filters = filtersWhereCascade
+                    };
+                    return dyfilterWhereCascadeOr;
+                }
+
                 return dyfilter;
 
             }
@@ -405,7 +465,8 @@ namespace Densen.DataAcces.FreeSql
 
 
 
-             static bool IsNumeric(this string text) => double.TryParse(text, out _);
+
+        static bool IsNumeric(this string text) => double.TryParse(text, out _);
 
             /// <summary>
             /// String转Decimal

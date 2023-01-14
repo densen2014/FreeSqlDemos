@@ -44,12 +44,17 @@
             缓存记录
             </summary>
         </member>
+        <member name="M:Densen.DataAcces.FreeSql.FreeSqlDataService`1.GetAllItems(FreeSql.Internal.Model.DynamicFilterInfo,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            全部记录
+            </summary>
+        </member>
         <member name="P:Densen.DataAcces.FreeSql.FreeSqlDataService`1.Options">
             <summary>
             缓存查询条件
             </summary>
         </member>
-        <member name="M:Densen.DataAcces.FreeSql.FreeSqlDataService`1.QueryAsyncWithWhereCascade(BootstrapBlazor.Components.QueryPageOptions,FreeSql.Internal.Model.DynamicFilterInfo,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.String})">
+        <member name="M:Densen.DataAcces.FreeSql.FreeSqlDataService`1.QueryAsyncWithWhereCascade(BootstrapBlazor.Components.QueryPageOptions,FreeSql.Internal.Model.DynamicFilterInfo,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
             <summary>
             查询方法
             </summary>
@@ -58,6 +63,7 @@
             <param name="IncludeByPropertyNames">附加IncludeByPropertyName查询条件</param>
             <param name="LeftJoinString">左联查询，使用原生sql语法，LeftJoin("type b on b.id = a.id")</param>
             <param name="OrderByPropertyName">强制排序,但是手动排序优先</param>
+            <param name="WhereCascadeOr">附加查询条件使用or结合</param>
             <returns></returns>
         </member>
         <member name="M:Densen.DataAcces.FreeSql.FreeSqlDataService`1.QueryAsync(BootstrapBlazor.Components.QueryPageOptions)">
@@ -67,27 +73,29 @@
             <param name="option"></param>
             <returns></returns>
         </member>
-        <member name="M:Densen.DataAcces.FreeSql.FsqlUtil.Fetch``1(BootstrapBlazor.Components.QueryPageOptions,BootstrapBlazor.Components.QueryPageOptions,System.Nullable{System.Int64},System.Collections.Generic.List{``0},IFreeSql,FreeSql.Internal.Model.DynamicFilterInfo,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.String})">
+        <member name="M:Densen.DataAcces.FreeSql.FsqlUtil.Fetch``1(BootstrapBlazor.Components.QueryPageOptions,BootstrapBlazor.Components.QueryPageOptions,System.Nullable{System.Int64},IFreeSql,FreeSql.Internal.Model.DynamicFilterInfo,System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Boolean)">
             <summary>
             执行查询
             </summary>
             <param name="options">查询条件</param>
             <param name="optionsLast">缓存查询条件</param>
-            <param name="TotalCount"></param>
-            <param name="Items"></param>
+            <param name="TotalCount"></param> 
             <param name="fsql"></param>
             <param name="WhereCascade">附加查询条件使用and结合</param>
             <param name="IncludeByPropertyNames">附加IncludeByPropertyName查询条件</param>
             <param name="LeftJoinString">左联查询，使用原生sql语法，LeftJoin("type b on b.id = a.id")</param>
             <param name="OrderByPropertyName">强制排序,但是手动排序优先</param>
+            <param name="WhereCascadeOr">附加查询条件使用or结合</param>
+            <param name="forceAllItems">附加查询条件使用or结合</param>
         </member>
-        <member name="M:Densen.DataAcces.FreeSql.FsqlUtil.MakeDynamicFilterInfo(BootstrapBlazor.Components.QueryPageOptions,System.Boolean@,FreeSql.Internal.Model.DynamicFilterInfo)">
+        <member name="M:Densen.DataAcces.FreeSql.FsqlUtil.MakeDynamicFilterInfo(BootstrapBlazor.Components.QueryPageOptions,System.Boolean@,FreeSql.Internal.Model.DynamicFilterInfo,System.Collections.Generic.List{System.String})">
             <summary>
             生成Where子句的DynamicFilterInfo对象
             </summary>
             <param name="option"></param>
             <param name="isSerach"></param>
             <param name="WhereCascade">强制and的条件</param>
+            <param name="WhereCascadeOr">附加查询条件使用or结合</param>
             <returns></returns>
         </member>
         <member name="M:Densen.DataAcces.FreeSql.FsqlUtil.ToDecimal(System.String,System.Decimal)">

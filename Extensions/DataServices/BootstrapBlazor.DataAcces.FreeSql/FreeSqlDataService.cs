@@ -22,6 +22,7 @@ namespace Densen.DataAcces.FreeSql
     public class FreeSqlDataService<TModel> : DataServiceBase<TModel> where TModel : class, new()
     {
         public IFreeSql fsql;
+        
         /// <summary>
         /// 构造函数
         /// </summary>

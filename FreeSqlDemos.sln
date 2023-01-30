@@ -11,7 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xamarinFormApps", "xamarinF
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Densen.Extensions.Freesql.BootstrapBlazor", "Extensions\DataServices\BootstrapBlazor.DataAcces.FreeSql\Densen.Extensions.Freesql.BootstrapBlazor.csproj", "{C6718A5E-88DB-4362-BD74-3BA9565DDA78}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", "{8D5D78FF-7626-4859-9738-9B67885D255E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions(存档)", "Extensions(存档)", "{8D5D78FF-7626-4859-9738-9B67885D255E}"
+	ProjectSection(SolutionItems) = preProject
+		Notice.txt = Notice.txt
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "xamarinFormApp", "xamarinFormApps\xamarinFormApp\xamarinFormApp.csproj", "{95DDBA5F-4571-43B1-994D-58F89201A566}"
 EndProject

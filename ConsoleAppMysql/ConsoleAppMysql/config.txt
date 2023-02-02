@@ -1,0 +1,1 @@
+﻿Data Source=xxxx;Port=3306;User ID=xx;Password=xx;Initial Catalog=shop;Charset=utf8;SslMode=none;Max pool size=2;connection lifetime=15

@@ -10,8 +10,11 @@ using System.Xml.Linq;
 using Newtonsoft.Json;
 using System.Threading;
 using System.Linq.Expressions;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
+using System.Reflection;
 
- class Program
+class Program
 {
     private static async Task Main(string[] args)
     {
@@ -27,14 +30,33 @@ using System.Linq.Expressions;
             .UseNoneCommandParameter(true)
             .Build();
 
+        var parms0 = new {parameter1 = Guid.NewGuid().ToString() };
+        
+        var proc1 = new proc1();
+        var parms = proc1.EntityToMap();
+        var parms2 = proc1.ObjectToMap();
 
-        var res2 = fsql.Ado.CommandFluent(nameof(proc1))
+
+        for (int i = 0; i < 10; i++)
+        {
+
+            var res2 = fsql.Ado.CommandFluent(nameof(proc1), parms)
             .CommandType(CommandType.StoredProcedure)
             .CommandTimeout(60)
-            .WithParameter(nameof(proc1.parameter1), null, NewMethod(nameof(proc1.parameter1)))
+            //.WithParameter(nameof(proc1.parameter1), null, NewMethod(nameof(proc1.parameter1)))
             .ExecuteScalar(); //执行存储过程
 
-        Console.WriteLine(res2);
+            Console.WriteLine(res2);
+            
+            var res3 = fsql.Ado.CommandFluent(nameof(proc1), parms2)
+            .CommandType(CommandType.StoredProcedure)
+            .CommandTimeout(60)
+            //.WithParameter(nameof(proc1.parameter1), null, NewMethod(nameof(proc1.parameter1)))
+            .ExecuteScalar(); //执行存储过程
+
+            Console.WriteLine(res3);
+        }
+
 
         return;
 
@@ -50,13 +72,21 @@ using System.Linq.Expressions;
     private static Action<DbParameter> NewMethod(string parameter) => p => p = p.DefaultValue(parameter);
     
 
-    [JsonObject(MemberSerialization.OptIn), Table(DisableSyncStructure = true)]
     public partial class proc1
     {
+        public int ID { get; set; }
+        public string parameter1 { get; set; } = Guid.NewGuid().ToString();
+        public DateTime modifydate { get; set; } = DateTime.Now;
 
+    }
+
+    public partial class proc2
+    {
+        public int ID  { get; set; } 
         public string parameter1 { get; set; } = Guid.NewGuid().ToString();
 
     }
+
 }
 
 

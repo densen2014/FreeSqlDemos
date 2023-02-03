@@ -13,7 +13,10 @@ namespace MyTestDB {
 
 		[JsonProperty]
 		public string remark { get; set; }
+		
+        [JsonProperty]
+        public DateTime modifydate { get; set; } = DateTime.Now;
 
-	}
+    }
 
 }

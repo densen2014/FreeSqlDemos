@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+ï»¿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -12,25 +12,32 @@ using WebApi;
 
 IFreeSql fsql = new FreeSql.FreeSqlBuilder()
     .UseConnectionString(FreeSql.DataType.Sqlite, "Data Source=document.db; Pooling=true;Min Pool Size=1")
-    .UseAutoSyncStructure(true) //×Ô¶¯Í¬²½ÊµÌå½á¹¹¡¾¿ª·¢»·¾³±Ø±¸¡¿
-    .UseMonitorCommand(cmd => Console.Write(cmd.CommandText))//Ê¹ÓÃazureµÄapp service Ó¦ÓÃ·şÎñ Linux°æ±¾, ºÃÏñ²»ÄÜÊ¹ÓÃ  
+    .UseAutoSyncStructure(true) //è‡ªåŠ¨åŒæ­¥å®ä½“ç»“æ„ã€å¼€å‘ç¯å¢ƒå¿…å¤‡ã€‘
+    .UseMonitorCommand(cmd => Console.Write(cmd.CommandText))//ä½¿ç”¨azureçš„app service åº”ç”¨æœåŠ¡ Linuxç‰ˆæœ¬, å¥½åƒä¸èƒ½ä½¿ç”¨  
     .Build();
 
 
-#region ³õÊ¼»¯demoÊı¾İ
+#region åˆå§‹åŒ–demoæ•°æ®
 
 var ItemList = new List<Item>()
             {
-                new Item {  Text = "¼Ù×° First item", Description="This is an item description." },
-                new Item {  Text = "µÄ¸ç Second item", Description="This is an item description." },
-                new Item { Text = "ËÄ·ç Third item", Description="This is an item description." },
-                new Item {  Text = "¼ÓÖİ Fourth item", Description="This is an item description." },
-                new Item { Text = "Ñô¹â Fifth item", Description="This is an item description." },
-                new Item {  Text = "¿×È¸ Sixth item", Description="This is an item description." }
+                new Item {  Text = "å‡è£… First item", Description="This is an item description.",UserID =1 },
+                new Item {  Text = "çš„å“¥ Second item", Description="This is an item description.",UserID =1 },
+                new Item { Text = "å››é£ Third item", Description="This is an item description.",UserID =2 },
+                new Item {  Text = "åŠ å· Fourth item", Description="This is an item description.",UserID =2 },
+                new Item { Text = "é˜³å…‰ Fifth item", Description="This is an item description.",UserID =2 },
+                new Item {  Text = "å­”é›€ Sixth item", Description="This is an item description.",UserID =2 }
+            };
+
+var Userss = new List<Users>()
+            {
+                new Users {  Name = "è€å¼ ", Password="This is an item description." }, 
+                new Users {  Name = "å‘¨", Password="This is an item description." }, 
             };
 
 if (fsql.Select<Item>().Count() == 0)
 {
+    fsql.Insert<Users>().AppendData(Userss).ExecuteAffrows();
     fsql.Insert<Item>().AppendData(ItemList).ExecuteAffrows();
 }
 ItemList = fsql.Select<Item>().ToList();
@@ -48,7 +55,7 @@ builder.Services.AddControllers();
 builder.Services.AddSwaggerGen(c =>
 {
     c.IncludeXmlComments(System.IO.Path.Combine(AppContext.BaseDirectory, "WebApi.xml"), true);
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApi", Version = "v1", Description = "¹¤³ÌÔ´Âë https://github.com/densen2014/FreeSqlDemos" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApi", Version = "v1", Description = "å·¥ç¨‹æºç  https://github.com/densen2014/FreeSqlDemos" });
 });
 
 var app = builder.Build();

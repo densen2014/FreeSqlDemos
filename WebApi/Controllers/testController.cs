@@ -44,6 +44,19 @@ namespace WebApi.Controllers
             return ItemList;
         }
 
+
+        /// <summary>
+        /// 获取数据
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("Get2")]
+        public IEnumerable<Item> Get2()
+        {
+            var ItemList = _fsql.Select<Item>().Include(a=>a.Userss).ToList();
+
+            return ItemList;
+        }
+
         /// <summary>
         /// put或者GET的put方法插入一条数据
         /// </summary>

@@ -40,6 +40,26 @@ namespace WebApi
         [Navigate(nameof(UserID))]
         public virtual Users Userss { get; set; }
 
+
+        [Column(IsIgnore = true)]
+        [DisplayName("创建人")]
+        public string UserName2 { get => UsersLites?.Name; }
+
+        [DisplayName("用户表")]
+        [Navigate(nameof(UserID))]
+        public virtual UsersLite UsersLites { get; set; }
+
+    }
+
+    [Table(Name = "Users")]
+    public class UsersLite
+    {
+        [Column(IsIdentity = true)]
+        [DisplayName("序号")]
+        public int Id { get; set; }
+
+        [DisplayName("名称")]
+        public string Name { get; set; }
     }
 
     public class Users

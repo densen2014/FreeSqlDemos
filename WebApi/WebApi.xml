@@ -27,6 +27,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:WebApi.Controllers.testController.Get3">
+            <summary>
+            获取数据
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:WebApi.Controllers.testController.Put(System.String)">
             <summary>
             put或者GET的put方法插入一条数据

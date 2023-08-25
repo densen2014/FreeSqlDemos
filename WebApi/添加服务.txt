@@ -1,0 +1,1 @@
+sc create API_fsql binPath="C:\Repos\FreeSqlDemos\WebApi\bin\Release\net7.0\publish\WebApi.exe"

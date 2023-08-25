@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting.WindowsServices;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using WebApi;
 
@@ -49,6 +50,7 @@ Console.WriteLine("ItemList: " + ItemList.Count());
 #endregion 
 
 //var builder = WebApplication.CreateBuilder(args);
+Directory.SetCurrentDirectory(AppContext.BaseDirectory);
 var builder = WebApplication.CreateBuilder(new WebApplicationOptions()
 {
     ContentRootPath = WindowsServiceHelpers.IsWindowsService() ? AppContext.BaseDirectory : default,
@@ -57,6 +59,7 @@ var builder = WebApplication.CreateBuilder(new WebApplicationOptions()
 builder.Services.AddCors();
 builder.Services.AddSingleton(fsql);
 builder.Services.AddControllers();
+builder.Host.UseWindowsService();
 builder.Services.AddSwaggerGen(c =>
 {
     c.IncludeXmlComments(System.IO.Path.Combine(AppContext.BaseDirectory, "WebApi.xml"), true);

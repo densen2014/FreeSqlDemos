@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Hosting.WindowsServices;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
@@ -47,8 +48,12 @@ Console.WriteLine("ItemList: " + ItemList.Count());
 
 #endregion 
 
-var builder = WebApplication.CreateBuilder(args);
-
+//var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(new WebApplicationOptions()
+{
+    ContentRootPath = WindowsServiceHelpers.IsWindowsService() ? AppContext.BaseDirectory : default,
+    Args = args
+});
 builder.Services.AddCors();
 builder.Services.AddSingleton(fsql);
 builder.Services.AddControllers();

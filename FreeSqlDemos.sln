@@ -75,6 +75,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormsNF48", "WebFormsNF4
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppMysql", "ConsoleAppMysql\ConsoleAppMysql\ConsoleAppMysql.csproj", "{08CD04B9-DD69-4AAE-97F7-E48A2766D905}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeSql_issues1606", "FreeSql_issues1606\FreeSql_issues1606.csproj", "{1467CB6F-B144-47A1-AFEA-F4901293EA7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1233,6 +1235,48 @@ Global
 		{08CD04B9-DD69-4AAE-97F7-E48A2766D905}.Release|x64.Build.0 = Release|Any CPU
 		{08CD04B9-DD69-4AAE-97F7-E48A2766D905}.Release|x86.ActiveCfg = Release|Any CPU
 		{08CD04B9-DD69-4AAE-97F7-E48A2766D905}.Release|x86.Build.0 = Release|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.Debug|ARM.Build.0 = Debug|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.Debug|x64.Build.0 = Debug|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.Debug|x86.Build.0 = Debug|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.DebugFsql|Any CPU.ActiveCfg = Debug|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.DebugFsql|Any CPU.Build.0 = Debug|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.DebugFsql|ARM.ActiveCfg = Debug|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.DebugFsql|ARM.Build.0 = Debug|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.DebugFsql|ARM64.ActiveCfg = Debug|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.DebugFsql|ARM64.Build.0 = Debug|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.DebugFsql|iPhone.ActiveCfg = Debug|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.DebugFsql|iPhone.Build.0 = Debug|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.DebugFsql|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.DebugFsql|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.DebugFsql|x64.ActiveCfg = Debug|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.DebugFsql|x64.Build.0 = Debug|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.DebugFsql|x86.ActiveCfg = Debug|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.DebugFsql|x86.Build.0 = Debug|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.Release|ARM.ActiveCfg = Release|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.Release|ARM.Build.0 = Release|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.Release|ARM64.Build.0 = Release|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.Release|iPhone.Build.0 = Release|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.Release|x64.ActiveCfg = Release|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.Release|x64.Build.0 = Release|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.Release|x86.ActiveCfg = Release|Any CPU
+		{1467CB6F-B144-47A1-AFEA-F4901293EA7F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

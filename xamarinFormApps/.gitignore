@@ -108,6 +108,10 @@ ipch/
 *.vspx
 *.sap
 
+
+# JetBrains Rider
+.idea/
+*.sln.iml
 # Visual Studio Trace Files
 *.e2e
 

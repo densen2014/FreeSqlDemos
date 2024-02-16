@@ -340,3 +340,8 @@ ASALocalRun/
 healthchecksdb
 SignalRChat/document.db
 WebApi/document.db
+
+
+# JetBrains Rider
+.idea/
+*.sln.iml

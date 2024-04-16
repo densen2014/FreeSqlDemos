@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FreeSql" Version="3.2.821" />
+    <PackageReference Include="FreeSql.Provider.Sqlite" Version="3.2.821" />
+    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="6.0.2" />
+    <PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.6" />
+  </ItemGroup>
+
+</Project>
